@@ -5,11 +5,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
-        li.nav-item(class=('active' if current_page.path == 'index'))
+        li.nav-item(class=('active' if current_page.path == 'index.html'))
           = link_to root_path, class: 'nav-link' do
             |Home
             span.sr-only (current)
-        li.nav-item(class=('active' if current_page.path == 'research'))
+        li.nav-item(class=('active' if current_page.path == 'research.html'))
           = link_to 'Research', research_path, class: 'nav-link'
         li.nav-item
           = link_to 'CV', cv_path, class: 'nav-link', target: '_blank'
