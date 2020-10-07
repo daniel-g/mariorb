@@ -1,0 +1,17 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+  .container
+    a.navbar-brand href="#"  Mario Ayala
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item(class=('active' if current_page.path == 'index'))
+          = link_to root_path, class: 'nav-link' do
+            |Home
+            span.sr-only (current)
+        li.nav-item(class=('active' if current_page.path == 'research'))
+          = link_to 'Research', research_path, class: 'nav-link'
+        li.nav-item
+          = link_to 'CV', cv_path, class: 'nav-link', target: '_blank'
+        li.nav-item
+          = link_to 'Blog', blog_path, class: 'nav-link', target: '_blank'

@@ -1,0 +1,15 @@
+@import "./bootstrap_overrides.scss";
+
+.mario-app {
+  .navbar {
+    padding: 2rem 0;
+    text-transform: uppercase;
+  }
+  .nav-item {
+    padding: 0 1rem;
+  }
+
+  section#footer {
+    padding: 2rem 0;
+  }
+}

@@ -1,0 +1,20 @@
+section#research
+  h2 Research
+  .row
+    .col
+      markdown:
+        My research interests lie at the intersection of Markov processes and statistical mechanics. In specific, in the context of interacting particle systems (IPS), my research deals with the application of a type of duality technique to the theory of fluctuations from the hydrodynamic limit.
+
+        It is in this direction of research, and for IPS that enjoy the property of self-duality, that the following contributions have materialized:
+  h4 Published Papers
+  ul.list-unstyled
+    - data.research.papers.each_with_index do |paper, i|
+      li
+        |[#{i+1}] <strong>#{paper.author}</strong>.
+        |&nbsp;#{paper.title}
+        |&nbsp;#{paper.location}
+  h4 Other works
+  ul.list-unstyled
+    - data.research.other_works.each_with_index do |other_work, i|
+      li
+        |[#{i+1}] #{other_work.title}
