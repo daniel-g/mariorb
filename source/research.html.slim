@@ -8,13 +8,15 @@ section#research
         It is in this direction of research, and for IPS that enjoy the property of self-duality, that the following contributions have materialized:
   h4 Published Papers
   ul.list-unstyled
-    - data.research.papers.each_with_index do |paper, i|
+    - data.research.published.each_with_index do |published, i|
       li
-        |[#{i+1}] <strong>#{paper.author}</strong>.
-        |&nbsp;#{paper.title}
-        |&nbsp;#{paper.location}
-  h4 Other works
+        |[#{i+1}] <strong>#{published.author}</strong>.
+        |&nbsp;#{published.title}
+        |&nbsp;#{published.location}
+  h4 Submitted
   ul.list-unstyled
-    - data.research.other_works.each_with_index do |other_work, i|
+    - data.research.submitted.each_with_index do |submitted, i|
       li
-        |[#{i+1}] #{other_work.title}
+      |[#{i+1}] <strong>#{submitted.author}</strong>.
+      |&nbsp;#{submitted.title}
+      |&nbsp;#{submitted.location}

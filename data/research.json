@@ -1,17 +1,15 @@
 {
-  "papers": [
+  "published": [
     {
       "author": "Mario Ayala, Gioia Carinci, and Frank Redig",
       "title": "Quantitative boltzmann–gibbs principles via orthog-onal polynomial duality.",
       "location": "Journal of statistical physics, 171(6):980–999, 2018."
-    },
-    {
-      "author": "Mario Ayala, Gioia Carinci, and Frank Redig",
-      "title": "Higher Order Fluctuation Fields and Orthogonal Duality Polynomials.",
-      "location": "Arxiv"
     }
   ],
-  "other_works": [
-    { "title": "Another research title." }
+  "submitted": [
+    { "author": "Mario Ayala, Gioia Carinci, and Frank Redig",
+      "title": "Higher Order Fluctuation Fields and Orthogonal Duality Polynomials.",
+      "location": "Submitted to Electronic Journal of Probability"
+    }
   ]
 }

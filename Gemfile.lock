@@ -24,6 +24,7 @@ GEM
     fast_blank (1.0.0)
     fastimage (2.2.0)
     ffi (1.13.1)
+    ffi (1.13.1-x64-mingw32)
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
@@ -92,6 +93,8 @@ GEM
     rexml (3.2.4)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sassc (2.4.0-x64-mingw32)
+      ffi (~> 1.9)
     servolux (0.13.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
@@ -102,11 +105,15 @@ GEM
     tilt (2.0.10)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2020.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    wdm (0.1.1)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   middleman (~> 4.2)
@@ -117,4 +124,4 @@ DEPENDENCIES
   wdm (~> 0.1)
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
