@@ -8,8 +8,22 @@
   ],
   "submitted": [
     { "author": "Mario Ayala, Gioia Carinci, and Frank Redig",
+      "title": "Condensation of SIP particles and sticky Brownian motion.",
+      "location": "Submitted to Journal of statistical physics"
+    },
+    { "author": "Mario Ayala, Gioia Carinci, and Frank Redig",
       "title": "Higher Order Fluctuation Fields and Orthogonal Duality Polynomials.",
       "location": "Submitted to Electronic Journal of Probability"
+    }
+  ],
+  "unpublished":[
+    { "author": "Mario Ayala",
+      "title": "Hydrodynamic Limit for the Symmetric Inclusion Process.",
+      "location": "Master Thesis at Tu Delft"
+    },
+    { "author": "Mario Ayala,, Casandra Leann Pawling, Adrian Nicholas Smith, Linda Gao, David Hiebeler, and Benjamin Richard Morin",
+      "title": "An Epidemiological Approach to the Dynamics of Chytridiomycosis on a Harlequin Frog Population.",
+      "location": "MTBI 2006 - mtbi.asu.edu"
     }
   ]
 }

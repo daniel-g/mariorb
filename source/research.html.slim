@@ -20,3 +20,10 @@ section#research
       |[#{i+1}] <strong>#{submitted.author}</strong>.
       |&nbsp;#{submitted.title}
       |&nbsp;#{submitted.location}
+  h4 Unpublished
+  ul.list-unstyled
+    - data.research.unpublished.each_with_index do |unpublished, i|
+      li
+      |[#{i+1}] <strong>#{unpublished.author}</strong>.
+      |&nbsp;#{unpublished.title}
+      |&nbsp;#{unpublished.location}
