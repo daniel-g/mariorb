@@ -13,3 +13,5 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
           = link_to 'Research', research_path, class: 'nav-link'
         li.nav-item
           = link_to 'CV', cv_path, class: 'nav-link', target: '_blank'
+        li.nav-item(class=('active' if current_page.path == 'personal.html'))
+          = link_to 'Personal', personal_path, class: 'nav-link'

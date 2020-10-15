@@ -47,6 +47,10 @@ helpers do
   def blog_path
     '/blog'
   end
+
+  def personal_path
+    '/personal.html'
+  end
 end
 
 # Build-specific configuration
