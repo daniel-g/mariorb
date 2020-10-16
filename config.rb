@@ -48,8 +48,8 @@ helpers do
     '/blog'
   end
 
-  def personal_path
-    '/personal.html'
+  def simulations_path
+    '/simulations.html'
   end
 end
 
