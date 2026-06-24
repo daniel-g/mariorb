@@ -7158,16 +7158,21 @@ a.text-dark:hover, a.text-dark:focus {
   .mario-app h1, .mario-app h2, .mario-app h3, .mario-app h4, .mario-app h5, .mario-app h6 {
     font-family: 'Lora', serif; }
   .mario-app .navbar {
-    padding: 2rem 0;
-    text-transform: uppercase; }
+    padding: 1rem 0;
+    text-transform: uppercase;
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 0; }
   .mario-app .navbar-brand {
     font-family: 'Lora', serif;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    color: #EFD99A !important;
+    text-transform: none; }
   .mario-app .nav-item {
     padding: 0 1rem; }
   .mario-app section#hero {
     background-color: #0C1A2E;
-    padding: 4rem 0;
+    padding: 2rem 0 4rem 0;
     text-align: center;
     color: #F0F4FA; }
     .mario-app section#hero .hero-inner {
