@@ -4,7 +4,7 @@
   font-family: 'Inter', sans-serif;
   color: #0C1A2E;
 
-  h1, h2, h3, h4, h5, h6, .navbar-brand {
+  h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
   }
 
@@ -13,8 +13,53 @@
     text-transform: uppercase;
   }
 
+  .navbar-brand {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+  }
+
   .nav-item {
     padding: 0 1rem;
+  }
+
+  section#hero {
+    background-color: #0C1A2E;
+    padding: 4rem 0;
+    text-align: center;
+    color: #F0F4FA;
+
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Lora', serif;
+      font-size: 2.5rem;
+      color: #EFD99A;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-role {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8BA3C0;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-question {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #F0F4FA;
+      margin-bottom: 0;
+    }
+  }
+
+  section#bio {
+    border-bottom: 0.5px solid #DDE3ED;
   }
 
   section#footer {
@@ -24,6 +69,7 @@
   .card {
     border-radius: 10px;
     border: 0.5px solid #DDE3ED;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 
     &:nth-child(1) { border-top: 3px solid #185FA5; }
     &:nth-child(2) { border-top: 3px solid #0F6E56; }
@@ -35,13 +81,7 @@
     color: #0C1A2E;
   }
 
-  section#bio {
-    padding: 2rem 0;
-  }
-
   section#erdos {
-    padding: 1rem 0;
     font-size: 0.9rem;
-    color: #5F7A99;
   }
 }

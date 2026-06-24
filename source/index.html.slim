@@ -1,14 +1,16 @@
-section#bio
-  .row
-    .col-12.col-md-4.text-center.pb-3
+section#hero
+  .hero-inner
+    h1.hero-name Almost Surely Mario
+    p.hero-role Postdoctoral researcher · Department of Mathematics · TU München
+    p.hero-question How does macroscopic behavior emerge from microscopic randomness?
+
+section#bio.py-5
+  .row.align-items-center
+    .col-12.col-md-3.text-center.pb-4.pb-md-0
       = image_tag "profile-photo.jpeg", class: 'w-75 rounded-circle'
-    .col-12.col-md-8
+    .col-12.col-md-9
       markdown:
-        Bienvenidos!
-
-        My name is Mario Ayala. I am currently a postdoctoral researcher at the Department of Mathematics, TU München.
-
-        How does macroscopic behavior emerge from microscopic randomness?
+        Bienvenidos! My name is Mario Ayala.
 
         My research centers on the mathematical bridge between microscopic dynamics and macroscopic laws — how large collections of interacting particles generate collective behavior, how fluctuations around this behavior can be characterized, and what survives when randomness is coarse-grained or reinterpreted.
 
@@ -16,11 +18,11 @@ section#bio
 
         Contact: mario.ayala.valenzuela "at" gmail.com
 
-section#research.mt-4
+section#research.py-4
   h2.mb-4 Research lines
   .row
     .col-12.mb-4
-      .card.h-100.border-primary
+      .card.h-100
         .card-body
           h5.card-title Fluctuation fields, scaling limits & hydrodynamic theory
           p.card-text
@@ -48,6 +50,6 @@ section#research.mt-4
           p.card-text.mt-2
             | A downstream consequence of this perspective appears in continuous-time finance: in joint work with Benjamin Vallejo (University of Colima), we show that the choice of noise interpretation shifts optimal portfolio weights in the Merton problem in a systematic and quantifiable way.
 
-section#erdos.mt-4
-  p
+section#erdos.py-3
+  p.text-muted
     | My Erdős number is 4: Me → Frank Redig → Pablo A. Ferrari → Peter E. Ney → Paul Erdős
