@@ -6,31 +6,48 @@ section#bio
       markdown:
         Bienvenidos!
 
-        My name is Mario Ayala. I am currently a postdoctoral researcher at the Department of Mathematics at the Technical University of Munich (TU München).
+        My name is Mario Ayala. I am currently a postdoctoral researcher at the Department of Mathematics, TU München.
 
-        My research sits at the intersection of probability theory and mathematical physics. I am fascinated by the emergence of macroscopic laws from simple microscopic rules of interaction — the so-called micro-to-macro transition. Lately I have also been exploring connections between stochastic analysis and score-based generative models.
+        How does macroscopic behavior emerge from microscopic randomness?
 
-        My Erdős number is 4:
+        My research centers on the mathematical bridge between microscopic dynamics and macroscopic laws — how large collections of interacting particles generate collective behavior, how fluctuations around this behavior can be characterized, and what survives when randomness is coarse-grained or reinterpreted.
 
-        Me ---> Frank Redig ---> Pablo A. Ferrari ---> Peter E. Ney ---> Paul Erdős
+        Beyond formal research, I enjoy developing intuition through simulations, informal notes, and the occasional interdisciplinary detour.
 
         Contact: mario.ayala.valenzuela "at" gmail.com
 
 section#research.mt-4
   h2.mb-4 Research lines
   .row
-    .col-12.col-md-4.mb-3
+    .col-12.mb-4
       .card.h-100.border-primary
         .card-body
-          h5.card-title Fluctuation fields
-          p.card-text Higher-order fluctuations for SEP, SIP, and IRW. Convergence via inductive triangular drift decompositions and L² vanishing estimates.
-    .col-12.col-md-4.mb-3
+          h5.card-title Fluctuation fields, scaling limits & hydrodynamic theory
+          p.card-text
+            | My main laboratory consists of three conservative particle systems, the symmetric exclusion process (SEP), the symmetric inclusion process (SIP), and independent random walkers (IRW), all of which enjoy a remarkable self-duality property that makes them unusually tractable for exact calculations. Much of this work has been developed in collaboration with Frank Redig (TU Delft) and Gioia Carinci (University of Modena).
+          p.card-text.mt-2
+            | Within this setting I study two complementary scaling regimes. In the hydrodynamic regime, I derive the deterministic PDEs governing the evolution of particle density. In the fluctuation regime (the central-limit counterpart) the limiting objects are generalized stochastic processes formally solving SPDEs. A particular contribution here is the introduction of higher-order fluctuation fields, whose scaling limits require a notion of renormalized powers of distribution-valued processes.
+          p.card-text.mt-2
+            | A separate but related direction, in joint work with Nicolas Dirr (Cardiff University) and Johannes Zimmer (TU München), concerns the fixed-k scaling regime: rather than sending the number of particles to infinity, we fix k particles and study the limiting empirical measure. The limit is the atomic Dean-Kawasaki dynamics, a rigid measure-valued martingale problem whose only solutions are systems of independent diffusions.
+          p.card-text.mt-2
+            | More recently, with Michiel Renger (TU München), I have been studying a finer decomposition of the SEP dynamics: tracking not just the empirical density and net current, but also the unidirectional fluxes and collision counts (the events where a particle attempts to jump to an already-occupied site). These observables have their own hydrodynamic limits, with regime-dependent behavior: deterministic in most scaling regimes, and converging to a space-time white noise process for the net collision count.
+    .col-12.mb-4
       .card.h-100
         .card-body
-          h5.card-title Applications of duality
-          p.card-text Orthogonal duality polynomials (Krawtchouk, Meixner), empirical measure duality, and dressed fields absorbing the carré-du-champ anomaly.
-    .col-12.col-md-4.mb-3
+          h5.card-title Duality methods
+          p.card-text
+            | Duality is a property enjoyed by certain Markov processes (including SEP, SIP, and IRW) that allows one to study a complex many-particle system through the lens of a simpler dual process. Rather than a technique applied from the outside, it is a structural feature of the system that can be exploited systematically.
+          p.card-text.mt-2
+            | In my work, duality appears in two main roles. First, as a tool within scaling limit theory: orthogonal duality polynomials (Krawtchouk, Meixner) provide the right observables for deriving Boltzmann-Gibbs principles and characterizing fluctuation fields. Second, in recent work with Frank Redig (TU Delft), we show that the OU SPDE is dual to a system of independent Brownian motions. For now this is established in the non-interacting setting, but it suggests the possibility of finding duality relations between SPDEs and interacting diffusions more generally, which could have interesting consequences for numerical methods.
+    .col-12.mb-4
       .card.h-100
         .card-body
-          h5.card-title Noise interpretation in SDEs
-          p.card-text Itô, Stratonovich, and Klimontovich conventions. Reversibility under coarse-graining and stochastic integral choices in multiplicative noise.
+          h5.card-title Noise interpretation and stochastic calculus
+          p.card-text
+            | The choice of stochastic integral convention (Ito, Stratonovich, Klimontovich) is not merely a technical convenience. It determines key structural features of the resulting dynamics: the geometry of the diffusion, conditions for reversibility, and behavior under coarse-graining. In joint work with Nicolas Dirr (Cardiff University), Grigorios Pavliotis (Imperial College London), and Johannes Zimmer (TU München), we study these questions systematically for Langevin dynamics with state-dependent (multiplicative) noise, combining a geometric formulation with explicit algebraic reversibility conditions and a rigorous coarse-graining analysis via Mosco convergence of Dirichlet forms.
+          p.card-text.mt-2
+            | A downstream consequence of this perspective appears in continuous-time finance: in joint work with Benjamin Vallejo (University of Colima), we show that the choice of noise interpretation shifts optimal portfolio weights in the Merton problem in a systematic and quantifiable way.
+
+section#erdos.mt-4
+  p
+    | My Erdős number is 4: Me → Frank Redig → Pablo A. Ferrari → Peter E. Ney → Paul Erdős
