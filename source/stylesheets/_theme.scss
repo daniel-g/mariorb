@@ -1,15 +1,47 @@
 @import "./_bootstrap_overrides.scss";
 
 .mario-app {
+  font-family: 'Inter', sans-serif;
+  color: #0C1A2E;
+
+  h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Lora', serif;
+  }
+
   .navbar {
     padding: 2rem 0;
     text-transform: uppercase;
   }
+
   .nav-item {
     padding: 0 1rem;
   }
 
   section#footer {
     padding: 2rem 0;
+  }
+
+  .card {
+    border-radius: 10px;
+    border: 0.5px solid #DDE3ED;
+
+    &:nth-child(1) { border-top: 3px solid #185FA5; }
+    &:nth-child(2) { border-top: 3px solid #0F6E56; }
+    &:nth-child(3) { border-top: 3px solid #854F0B; }
+  }
+
+  .card-title {
+    font-family: 'Lora', serif;
+    color: #0C1A2E;
+  }
+
+  section#bio {
+    padding: 2rem 0;
+  }
+
+  section#erdos {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #5F7A99;
   }
 }
