@@ -1,6 +1,6 @@
 nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
   .container
-    a.navbar-brand href="#"  Mario Ayala
+    a.navbar-brand href="/"  Almost Surely Mario
     button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
       span.navbar-toggler-icon
     #navbarSupportedContent.collapse.navbar-collapse
@@ -11,7 +11,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
             span.sr-only (current)
         li.nav-item(class=('active' if current_page.path == 'research.html'))
           = link_to 'Research', research_path, class: 'nav-link'
-        li.nav-item(class=('active' if current_page.path == 'personal.html'))
+        li.nav-item(class=('active' if current_page.path == 'diffusion.html'))
+          = link_to 'Diffusion lab', '/diffusion.html', class: 'nav-link'
+        li.nav-item(class=('active' if current_page.path == 'simulations.html'))
           = link_to 'Simulations', simulations_path, class: 'nav-link'
         li.nav-item
           = link_to 'CV', cv_path, class: 'nav-link', target: '_blank'
