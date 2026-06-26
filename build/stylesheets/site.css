@@ -7334,7 +7334,7 @@ section#page-banner {
 
 .collab-tooltip {
   display: none;
-  position: absolute;
+  position: fixed;
   background: rgba(8, 18, 34, 0.97);
   border: 0.5px solid rgba(139, 163, 192, 0.3);
   border-radius: 8px;
@@ -7343,7 +7343,7 @@ section#page-banner {
   color: #F0F4FA;
   font-size: 0.82rem;
   pointer-events: none;
-  z-index: 10;
+  z-index: 9999;
   box-shadow: 0 4px 24px rgba(0,0,0,0.5);
   line-height: 1.5; }
 
