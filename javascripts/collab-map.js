@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function resize() {
     canvas.width = canvas.parentElement.clientWidth;
-    canvas.height = Math.round(canvas.width * 0.46);
+    canvas.height = Math.min(Math.round(canvas.width * 0.22), 210);
     reproject();
   }
   window.addEventListener('resize', resize);
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ctx.fillStyle = inst.isHome ? '#EFD99A' : (inst.early ? 'rgba(120,140,165,0.8)' : '#8FB3DC');
     ctx.fill();
 
-    if (isHov && !inst.isHome) {
+    if (isHov) {
       ctx.strokeStyle = '#EFD99A';
       ctx.lineWidth = 1.5;
       ctx.stroke();
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var my = (e.clientY - rect.top) * sy;
 
     var minDist = 22, nearest = -1;
-    for (var i = 1; i < instPts.length; i++) {
+    for (var i = 0; i < instPts.length; i++) {
       var dx = mx - instPts[i].x;
       var dy = my - instPts[i].y;
       var d = Math.sqrt(dx * dx + dy * dy);
