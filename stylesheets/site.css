@@ -7382,29 +7382,26 @@ section#page-banner {
 }
 
 .pub-filter-btn {
-  background: transparent;
-  border: 1px solid #DDE3ED;
+  background: #0C1A2E;
+  border: 1px solid #0C1A2E;
   border-radius: 999px;
   padding: 0.4rem 1.2rem;
   font-size: 0.82rem;
   font-family: 'Inter', sans-serif;
-  color: #495057;
+  color: #8BA3C0;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  transition: color 0.15s, box-shadow 0.15s;
   letter-spacing: 0.03em;
   outline: none;
 }
 
 .pub-filter-btn:hover {
-  border-color: #185FA5;
-  color: #185FA5;
+  color: #F0F4FA;
 }
 
 .pub-filter-btn.active {
-  background: #0C1A2E;
-  border-color: #0C1A2E;
   color: #EFD99A;
-  box-shadow: 0 2px 10px rgba(12,26,46,0.18);
+  box-shadow: 0 2px 10px rgba(12,26,46,0.28);
 }
 
 .pub-hidden {
