@@ -237,12 +237,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var mx = (e.clientX - rect.left) * sx;
     var my = (e.clientY - rect.top) * sy;
 
-    hovered = -1;
+    var minDist = 22, nearest = -1;
     for (var i = 1; i < instPts.length; i++) {
       var dx = mx - instPts[i].x;
       var dy = my - instPts[i].y;
-      if (Math.sqrt(dx * dx + dy * dy) < 20) { hovered = i; break; }
+      var d = Math.sqrt(dx * dx + dy * dy);
+      if (d < minDist) { minDist = d; nearest = i; }
     }
+    hovered = nearest;
 
     if (hovered !== -1) {
       var inst = institutions[hovered];

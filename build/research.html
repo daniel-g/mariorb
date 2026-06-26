@@ -9,6 +9,7 @@
   <link href="/stylesheets/site.css" rel="stylesheet" />
   <script src="/javascripts/site.js"></script>
   <script src="/javascripts/particles.js"></script>
+  <script src="/javascripts/collab-map.js"></script>
 </head>
 <body class="mario-app">
 
@@ -34,6 +35,11 @@
     <canvas id="particles"></canvas>
     <div class="page-banner-inner container">
       <h1 class="page-banner-title">Publications</h1>
+      <p class="page-banner-sub">Research collaborators — hover a node to explore</p>
+    </div>
+    <div class="map-container">
+      <canvas id="collab-map"></canvas>
+      <div id="collab-tooltip" class="collab-tooltip"></div>
     </div>
   </section>
 
