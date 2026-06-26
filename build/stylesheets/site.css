@@ -7299,3 +7299,69 @@ section#page-banner {
 
 .pub-cards > .card:nth-child(3n) {
   border-top: 3px solid #854F0B; }
+
+.mario-app section#collaborators {
+  background-color: #0C1A2E;
+  padding: 3rem 0 0; }
+
+.mario-app section#collaborators .collaborators-title {
+  font-family: 'Lora', serif;
+  color: #EFD99A;
+  text-align: center;
+  margin-bottom: 0.3rem; }
+
+.mario-app section#collaborators .collaborators-subtitle {
+  text-align: center;
+  color: #8BA3C0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2rem; }
+
+.map-container {
+  position: relative; }
+
+#collab-map {
+  display: block;
+  width: 100%; }
+
+.collab-tooltip {
+  display: none;
+  position: absolute;
+  background: rgba(8, 18, 34, 0.97);
+  border: 0.5px solid rgba(139, 163, 192, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  max-width: 290px;
+  color: #F0F4FA;
+  font-size: 0.82rem;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  line-height: 1.5; }
+
+.collab-tooltip strong {
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  color: #EFD99A;
+  display: block;
+  margin-bottom: 0.1rem; }
+
+.collab-tooltip .tt-city {
+  color: #8BA3C0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em; }
+
+.collab-tooltip .tt-collab {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 0.5px solid rgba(139,163,192,0.2); }
+
+.collab-tooltip .tt-name {
+  font-weight: 500;
+  color: #F0F4FA; }
+
+.collab-tooltip .tt-themes {
+  color: #8BA3C0;
+  font-size: 0.75rem; }
