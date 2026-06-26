@@ -257,11 +257,13 @@ document.addEventListener('DOMContentLoaded', function () {
       tooltip.innerHTML = html;
       tooltip.style.display = 'block';
 
-      var mapRect = canvas.parentElement.getBoundingClientRect();
-      var tx = e.clientX - mapRect.left + 16;
-      var ty = e.clientY - mapRect.top - 16;
-      if (tx + 295 > mapRect.width) tx = e.clientX - mapRect.left - 311;
-      if (ty < 0) ty = 4;
+      var tw = tooltip.offsetWidth;
+      var th = tooltip.offsetHeight;
+      var tx = e.clientX + 16;
+      var ty = e.clientY - 16;
+      if (tx + tw > window.innerWidth - 8) tx = e.clientX - tw - 16;
+      if (ty + th > window.innerHeight - 8) ty = e.clientY - th - 4;
+      if (ty < 8) ty = 8;
       tooltip.style.left = tx + 'px';
       tooltip.style.top = ty + 'px';
       canvas.style.cursor = 'pointer';
