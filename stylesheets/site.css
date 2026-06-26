@@ -7229,3 +7229,69 @@ section#hero {
   section#hero .hero-inner {
     position: relative;
     z-index: 2; }
+
+.mario-app section#page-banner {
+  background-color: #0C1A2E;
+  padding: 2.5rem 0;
+  text-align: center;
+  color: #F0F4FA; }
+  .mario-app section#page-banner .page-banner-title {
+    font-family: 'Lora', serif;
+    font-size: 1.8rem;
+    color: #EFD99A;
+    margin-bottom: 0; }
+
+section#page-banner {
+  position: relative;
+  overflow: hidden; }
+  section#page-banner canvas#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; }
+  section#page-banner .page-banner-inner {
+    position: relative;
+    z-index: 2; }
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.pub-list .pub-entry {
+  padding: 1.25rem 0;
+  border-bottom: 0.5px solid #DDE3ED; }
+
+.pub-list .pub-entry:last-child {
+  border-bottom: none; }
+
+.pub-title {
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #0C1A2E;
+  margin-bottom: 0.2rem; }
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: #495057;
+  margin-bottom: 0.1rem; }
+
+.pub-venue {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.35rem; }
+
+.pub-links a {
+  font-size: 0.78rem;
+  color: #185FA5;
+  text-decoration: none;
+  margin-right: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500; }
+
+.pub-links a:hover {
+  text-decoration: underline; }
