@@ -7203,13 +7203,17 @@ a.text-dark:hover, a.text-dark:focus {
   .mario-app .card {
     border-radius: 10px;
     border: 0.5px solid #DDE3ED;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05); }
-    .mario-app .card:nth-child(1) {
-      border-top: 3px solid #185FA5; }
-    .mario-app .card:nth-child(2) {
-      border-top: 3px solid #0F6E56; }
-    .mario-app .card:nth-child(3) {
-      border-top: 3px solid #854F0B; }
+    box-shadow: 0 2px 12px rgba(12, 26, 46, 0.08);
+    transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .mario-app .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(12, 26, 46, 0.14); }
+  .mario-app section#research .row > div:nth-child(1) .card {
+    border-top: 3px solid #185FA5; }
+  .mario-app section#research .row > div:nth-child(2) .card {
+    border-top: 3px solid #0F6E56; }
+  .mario-app section#research .row > div:nth-child(3) .card {
+    border-top: 3px solid #854F0B; }
   .mario-app .card-title {
     font-family: 'Lora', serif;
     color: #0C1A2E; }
@@ -7255,18 +7259,6 @@ section#page-banner {
     position: relative;
     z-index: 2; }
 
-.pub-list {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-
-.pub-list .pub-entry {
-  padding: 1.25rem 0;
-  border-bottom: 0.5px solid #DDE3ED; }
-
-.pub-list .pub-entry:last-child {
-  border-bottom: none; }
-
 .pub-title {
   font-family: 'Lora', serif;
   font-weight: 500;
@@ -7282,7 +7274,10 @@ section#page-banner {
 .pub-venue {
   font-size: 0.875rem;
   color: #6c757d;
-  margin-bottom: 0.35rem; }
+  margin-bottom: 0; }
+
+.pub-links {
+  margin-top: 0.5rem; }
 
 .pub-links a {
   font-size: 0.78rem;
@@ -7295,3 +7290,12 @@ section#page-banner {
 
 .pub-links a:hover {
   text-decoration: underline; }
+
+.pub-cards > .card:nth-child(3n+1) {
+  border-top: 3px solid #185FA5; }
+
+.pub-cards > .card:nth-child(3n+2) {
+  border-top: 3px solid #0F6E56; }
+
+.pub-cards > .card:nth-child(3n) {
+  border-top: 3px solid #854F0B; }
