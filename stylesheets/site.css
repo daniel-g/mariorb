@@ -7236,14 +7236,20 @@ section#hero {
 
 .mario-app section#page-banner {
   background-color: #0C1A2E;
-  padding: 2.5rem 0;
+  padding: 2rem 0 0;
   text-align: center;
   color: #F0F4FA; }
   .mario-app section#page-banner .page-banner-title {
     font-family: 'Lora', serif;
     font-size: 1.8rem;
     color: #EFD99A;
-    margin-bottom: 0; }
+    margin-bottom: 0.3rem; }
+  .mario-app section#page-banner .page-banner-sub {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8BA3C0;
+    margin-bottom: 1.5rem; }
 
 section#page-banner {
   position: relative;
@@ -7319,7 +7325,8 @@ section#page-banner {
   margin-bottom: 2rem; }
 
 .map-container {
-  position: relative; }
+  position: relative;
+  z-index: 2; }
 
 #collab-map {
   display: block;
