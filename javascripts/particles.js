@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var hero = canvas.parentElement;
+  var mapEl = hero.querySelector('.map-container');
 
   var CELL = 28;           // lattice spacing in CSS px
   var DENSITY = 0.22;      // Bernoulli occupancy probability
@@ -13,10 +14,22 @@ document.addEventListener('DOMContentLoaded', function() {
   var DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1]];
   var LINE_DIRS = [[1, 0], [0, 1]]; // draw each neighbor edge once
 
-  var dpr, cols, rows, cellPx, occ, particles, t, timeToNext;
+  var FADE_PX = 90; // transition zone above wherever the particles must clear out
+
+  var dpr, cols, rows, cellPx, occ, particles, t, timeToNext, fadeStart, fadeEnd;
 
   function idx(gx, gy) { return gy * cols + gx; }
   function wrap(gx, gy) { return [((gx % cols) + cols) % cols, ((gy % rows) + rows) % rows]; }
+
+  // Particles overlapping the collaborator map read as clutter (same
+  // steel-blue palette as the map's own nodes/arcs), so fade them out
+  // before they reach it instead of drawing under it at full strength.
+  function alphaAt(y) {
+    if (fadeStart == null) return 1;
+    if (y <= fadeStart) return 1;
+    if (y >= fadeEnd) return 0;
+    return 1 - (y - fadeStart) / (fadeEnd - fadeStart);
+  }
 
   // Continuous-time SSEP: each particle has an independent rate-lambda
   // exponential clock. Their superposition is one global clock of rate
@@ -69,6 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
     cols = Math.max(4, Math.floor(w / CELL));
     rows = Math.max(4, Math.floor(h / CELL));
     cellPx = Math.min(w / cols, h / rows);
+    if (mapEl) {
+      fadeEnd = mapEl.offsetTop + 10;
+      fadeStart = Math.max(0, fadeEnd - FADE_PX);
+    } else {
+      fadeStart = fadeEnd = null;
+    }
     seed();
   }
   resize();
@@ -140,29 +159,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (i = 0; i < particles.length; i++) {
       var p = particles[i];
+      var pa = alphaAt(p.y);
+      if (pa <= 0.02) continue;
       for (var n = 0; n < LINE_DIRS.length; n++) {
         var nb = wrap(p.gx + LINE_DIRS[n][0], p.gy + LINE_DIRS[n][1]);
         if (occ[idx(nb[0], nb[1])] === -1) continue;
         var q = siteToPx(nb[0], nb[1]);
         if (Math.abs(q[0] - p.x) > (cellPx * cols) / 2) continue;
         if (Math.abs(q[1] - p.y) > (cellPx * rows) / 2) continue;
+        var la = Math.min(pa, alphaAt(q[1]));
+        if (la <= 0.02) continue;
         ctx.beginPath();
         ctx.moveTo(p.x, p.y);
         ctx.lineTo(q[0], q[1]);
-        ctx.strokeStyle = 'rgba(143,179,220,0.15)';
+        ctx.strokeStyle = 'rgba(143,179,220,' + (0.15 * la) + ')';
         ctx.lineWidth = 0.6;
         ctx.stroke();
       }
     }
 
-    var path = new Path2D();
+    // Bucket particles by fade level so the batched fill still costs one
+    // fill() per bucket instead of per particle.
+    var BUCKETS = 8;
+    var paths = null;
     for (i = 0; i < particles.length; i++) {
       p = particles[i];
-      path.moveTo(p.x + p.r, p.y);
-      path.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      var a = alphaAt(p.y);
+      var b = Math.round(a * BUCKETS);
+      if (b <= 0) continue;
+      if (!paths) paths = {};
+      if (!paths[b]) paths[b] = new Path2D();
+      paths[b].moveTo(p.x + p.r, p.y);
+      paths[b].arc(p.x, p.y, p.r, 0, Math.PI * 2);
     }
-    ctx.fillStyle = 'rgba(143,179,220,0.6)';
-    ctx.fill(path);
+    if (paths) {
+      for (var bucket in paths) {
+        ctx.fillStyle = 'rgba(143,179,220,' + (0.6 * (bucket / BUCKETS)) + ')';
+        ctx.fill(paths[bucket]);
+      }
+    }
 
     requestAnimationFrame(frame);
   }
