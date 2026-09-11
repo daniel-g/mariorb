@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
       city: 'Avignon, France',
       lat: 43.95, lon: 4.81,
       collaborators: [
-        { name: 'Jerome Coville', themes: 'Measure-valued stochastic models, spatial ecology, dispersal, vector-borne viruses' },
-        { name: 'Raphael Forien', themes: 'Measure-valued stochastic models, epidemiological dynamics, spatial stochastic processes' },
+        { name: 'Jérôme Coville', themes: 'Measure-valued stochastic models, spatial ecology, dispersal, vector-borne viruses' },
+        { name: 'Raphaël Forien', themes: 'Measure-valued stochastic models, epidemiological dynamics, spatial stochastic processes' },
         { name: 'Samuel Soubeyrand', themes: 'Spatial ecology, dispersal models, biological invasions, mechanistic-statistical modelling' }
       ]
     },
@@ -62,7 +62,9 @@ document.addEventListener('DOMContentLoaded', function () {
       city: 'Colima, Mexico',
       lat: 19.24, lon: -103.72,
       collaborators: [
-        { name: 'Benjamin Vallejo Jimenez', themes: 'Stochastic control, anticipative noise, mathematical finance, consumption-investment' }
+        { name: 'Benjamín Vallejo Jiménez', themes: 'Stochastic control, anticipative noise, mathematical finance, consumption-investment' },
+        { name: 'Ricardo Castellanos Curiel', themes: 'Mathematical finance, consumption and portfolios under carbon regimes' },
+        { name: 'Miguel Ángel Tinoco Zermeño', themes: 'Mathematical finance, consumption and portfolios under carbon regimes' }
       ]
     },
     {
@@ -230,14 +232,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   frame();
 
-  canvas.addEventListener('mousemove', function (e) {
+  // Show the card of the node nearest to (clientX, clientY), within `reach` CSS pixels;
+  // hide it when there is none. Returns whether a node was found.
+  function showAt(clientX, clientY, reach) {
     var rect = canvas.getBoundingClientRect();
     var sx = canvas.width / rect.width;
     var sy = canvas.height / rect.height;
-    var mx = (e.clientX - rect.left) * sx;
-    var my = (e.clientY - rect.top) * sy;
+    var mx = (clientX - rect.left) * sx;
+    var my = (clientY - rect.top) * sy;
 
-    var minDist = 22, nearest = -1;
+    var minDist = reach * sx, nearest = -1;
     for (var i = 0; i < instPts.length; i++) {
       var dx = mx - instPts[i].x;
       var dy = my - instPts[i].y;
@@ -259,22 +263,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var tw = tooltip.offsetWidth;
       var th = tooltip.offsetHeight;
-      var tx = e.clientX + 16;
-      var ty = e.clientY - 16;
-      if (tx + tw > window.innerWidth - 8) tx = e.clientX - tw - 16;
-      if (ty + th > window.innerHeight - 8) ty = e.clientY - th - 4;
+      var tx = clientX + 16;
+      var ty = clientY - 16;
+      if (tx + tw > window.innerWidth - 8) tx = clientX - tw - 16;
+      if (tx < 8) tx = 8;
+      if (ty + th > window.innerHeight - 8) ty = clientY - th - 4;
       if (ty < 8) ty = 8;
       tooltip.style.left = tx + 'px';
       tooltip.style.top = ty + 'px';
       canvas.style.cursor = 'pointer';
-    } else {
-      tooltip.style.display = 'none';
-      canvas.style.cursor = 'default';
+      return true;
     }
-  });
+    tooltip.style.display = 'none';
+    canvas.style.cursor = 'default';
+    return false;
+  }
 
-  canvas.addEventListener('mouseleave', function () {
+  function hide() {
     hovered = -1;
     tooltip.style.display = 'none';
+  }
+
+  canvas.addEventListener('mousemove', function (e) { showAt(e.clientX, e.clientY, 14); });
+  canvas.addEventListener('mouseleave', hide);
+
+  // Phones have no hover: a tap opens the nearest node (fingers get a wider reach),
+  // and a tap anywhere else, or scrolling, closes it.
+  canvas.addEventListener('click', function (e) {
+    showAt(e.clientX, e.clientY, 30);
+    e.stopPropagation();
   });
+  document.addEventListener('click', hide);
+  window.addEventListener('scroll', hide, { passive: true });
 });

@@ -8,8 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     el.href = 'mailto:' + addr;
   });
 
+  // Mobile menu: the navbar uses Bootstrap's collapse markup, but Bootstrap's JS is
+  // not loaded, so the toggler button opens and closes the menu here
+  document.querySelectorAll('.navbar-toggler').forEach(function(btn) {
+    var menu = document.querySelector(btn.dataset.target);
+    if (!menu) return;
+    btn.addEventListener('click', function() {
+      var open = menu.classList.toggle('show');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
   // Publication category filter
-  var filterBtns = document.querySelectorAll('.pub-filter-btn');
+  var filterBtns = document.querySelectorAll('.pub-filter-btn[data-filter]');
   if (!filterBtns.length) return;
 
   var allCards = document.querySelectorAll('#publications .card, #other-work .card');
@@ -42,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
         applyFilter(btn.dataset.filter);
       }
     });
+  });
+
+  // research.html#scaling (or #effective, #populations, #other) opens with that filter on
+  var initial = location.hash.slice(1);
+  filterBtns.forEach(function(btn) {
+    if (btn.dataset.filter === initial) btn.click();
   });
 
 });

@@ -1,10 +1,154 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="ie=edge" http-equiv="x-ua-compatible" /><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /><title>Mario Ayala</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" /><link href="/stylesheets/site.css" rel="stylesheet" /><script src="/javascripts/site.js"></script><script src="/javascripts/particles.js?v=dev5"></script></head><body class="mario-app"><nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="/"> Almost Surely Mario</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item active"><a href="/" class="nav-link">Home<span class="sr-only" current=""></span></a></li><li class="nav-item"><a href="/research.html" class="nav-link">Research</a></li><li class="nav-item"><a href="/simulations.html" class="nav-link">Simulations</a></li><li class="nav-item"><a href="/files/CvMarioAyala.pdf" class="nav-link" target="_blank">CV</a></li></ul></div></div></nav><div class="container py-3" id="main"><section id="hero"><canvas id="particles"></canvas><div class="hero-inner"><h1 class="hero-name">Mario Ayala</h1><p class="hero-role">Postdoctoral researcher · Department of Mathematics · TU München</p><p class="hero-question">How does macroscopic behavior emerge from microscopic randomness?</p></div></section><section class="py-5" id="bio"><div class="row align-items-center"><div class="col-12 col-md-3 text-center pb-4 pb-md-0"><img src="/images/profile-photo.jpeg" class="w-75 rounded-circle" alt="" /></div><div class="col-12 col-md-9"><p>Bienvenidos! My name is Mario Ayala.</p>
-
-<p>My research centers on the mathematical bridge between microscopic dynamics and macroscopic laws — how large collections of interacting particles generate collective behavior, how fluctuations around this behavior can be characterized, and what survives when randomness is coarse-grained or reinterpreted.</p>
-
-<p>Beyond formal research, I enjoy developing intuition through simulations, informal notes, and the occasional interdisciplinary detour.</p>
-
-<p class="text-muted" style="font-size: 0.9rem;">Thanks a lot to Bart van Ginkel for his help getting the particle background right. Notice that those aren't just decorative dots, they're an actual symmetric exclusion process (SEP), the same class of models behind much of my research.</p>
-
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta content="ie=edge" http-equiv="x-ua-compatible" /><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /><title>Mario Ayala</title>
+  <meta name="description" content="Mario Ayala, postdoctoral researcher at TU München. Probability: scaling limits of interacting particle systems, duality, effective dynamics and stochastic population models." />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Almost Surely Mario" />
+  <meta property="og:title" content="Mario Ayala" />
+  <meta property="og:description" content="Mario Ayala, postdoctoral researcher at TU München. Probability: scaling limits of interacting particle systems, duality, effective dynamics and stochastic population models." />
+  <meta property="og:url" content="https://www.almostsurelymario.com/" />
+  <meta property="og:image" content="https://www.almostsurelymario.com/images/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" /><link href="/stylesheets/site.css?v=2" rel="stylesheet" /><link href="/stylesheets/research-map.css?v=2" rel="stylesheet" /><script src="/javascripts/site.js?v=3"></script><script src="/javascripts/particles.js?v=dev5"></script></head><body class="mario-app"><nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="/"> Almost Surely Mario</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item active"><a href="/" class="nav-link">Home<span class="sr-only" current=""></span></a></li><li class="nav-item"><a href="/research.html" class="nav-link">Research</a></li><li class="nav-item"><a href="/simulations.html" class="nav-link">Simulations</a></li><li class="nav-item"><a href="/files/CvMarioAyala.pdf" class="nav-link" target="_blank">CV</a></li></ul></div></div></nav><div class="container py-3" id="main"><section id="hero"><canvas id="particles"></canvas><div class="hero-inner"><h1 class="hero-name">Mario Ayala</h1><p class="hero-role">Postdoctoral researcher · School of Computation, Information and Technology · TU München</p><p class="hero-question">How does macroscopic behavior emerge from microscopic randomness?</p></div></section><section class="py-5" id="bio"><div class="row align-items-center"><div class="col-12 col-md-3 text-center pb-4 pb-md-0"><img src="/images/profile-photo.jpeg" class="w-75 rounded-circle" alt="Mario Ayala giving a talk" /></div><div class="col-12 col-md-9">
+<p>Bienvenidos! My name is Mario Ayala.</p>
+<p>My research is in probability theory, and more precisely in the rigorous passage from microscopic rules of interaction to macroscopic laws: how large collections of interacting particles generate collective behavior, how the fluctuations around this behavior can be characterized, and what survives when randomness is coarse-grained or reinterpreted. What I find most attractive about this subject is that the macroscopic law is never postulated: it is obtained, together with the precise sense in which the microscopic system converges to it.</p>
+<p>Beyond formal research, I enjoy developing intuition through simulations, informal notes, and the occasional interdisciplinary detour. Notice that you can play with the simulations yourself on the <a class="text-link" href="/simulations.html">Simulations page</a>.</p>
+<p class="text-muted" style="font-size: 0.9rem;">Thanks a lot to Bart van Ginkel for his help getting the particle background right. Notice that the dots are an actual symmetric exclusion process (SEP), the same class of models behind much of my research.</p>
 <p>Contact: <a class="email-link" data-n="mario.ayala.valenzuela" data-d="gmail.com"></a></p>
-</div></div></section><section class="py-4" id="research"><h2 class="mb-4">Research lines</h2><div class="row"><div class="col-12 mb-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">Fluctuation fields, scaling limits & hydrodynamic theory</h5><p class="card-text">My main laboratory consists of three conservative particle systems, the symmetric exclusion process (SEP), the symmetric inclusion process (SIP), and independent random walkers (IRW), all of which enjoy a remarkable self-duality property that makes them unusually tractable for exact calculations. Much of this work has been developed in collaboration with Frank Redig (TU Delft) and Gioia Carinci (University of Modena).</p><p class="card-text mt-2">Within this setting I study two complementary scaling regimes. In the hydrodynamic regime, I derive the deterministic PDEs governing the evolution of particle density. In the fluctuation regime (the central-limit counterpart) the limiting objects are generalized stochastic processes formally solving SPDEs. A particular contribution here is the introduction of higher-order fluctuation fields, whose scaling limits require a notion of renormalized powers of distribution-valued processes.</p><p class="card-text mt-2">A separate but related direction, in joint work with Nicolas Dirr (Cardiff University) and Johannes Zimmer (TU München), concerns the fixed-k scaling regime: rather than sending the number of particles to infinity, we fix k particles and study the limiting empirical measure. The limit is the atomic Dean-Kawasaki dynamics, a rigid measure-valued martingale problem whose only solutions are systems of independent diffusions.</p><p class="card-text mt-2">More recently, with Michiel Renger (TU München), I have been studying a finer decomposition of the SEP dynamics: tracking not just the empirical density and net current, but also the unidirectional fluxes and collision counts (the events where a particle attempts to jump to an already-occupied site). These observables have their own hydrodynamic limits, with regime-dependent behavior: deterministic in most scaling regimes, and converging to a space-time white noise process for the net collision count.</p></div></div></div><div class="col-12 mb-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">Duality methods</h5><p class="card-text">Duality is a property enjoyed by certain Markov processes (including SEP, SIP, and IRW) that allows one to study a complex many-particle system through the lens of a simpler dual process. Rather than a technique applied from the outside, it is a structural feature of the system that can be exploited systematically.</p><p class="card-text mt-2">In my work, duality appears in two main roles. First, as a tool within scaling limit theory: orthogonal duality polynomials (Krawtchouk, Meixner) provide the right observables for deriving Boltzmann-Gibbs principles and characterizing fluctuation fields. Second, in recent work with Frank Redig (TU Delft), we show that the OU SPDE is dual to a system of independent Brownian motions. For now this is established in the non-interacting setting, but it suggests the possibility of finding duality relations between SPDEs and interacting diffusions more generally, which could have interesting consequences for numerical methods.</p></div></div></div><div class="col-12 mb-4"><div class="card h-100"><div class="card-body"><h5 class="card-title">Noise interpretation and stochastic calculus</h5><p class="card-text">The choice of stochastic integral convention (Ito, Stratonovich, Klimontovich) is not merely a technical convenience. It determines key structural features of the resulting dynamics: the geometry of the diffusion, conditions for reversibility, and behavior under coarse-graining. In joint work with Nicolas Dirr (Cardiff University), Grigorios Pavliotis (Imperial College London), and Johannes Zimmer (TU München), we study these questions systematically for Langevin dynamics with state-dependent (multiplicative) noise, combining a geometric formulation with explicit algebraic reversibility conditions and a rigorous coarse-graining analysis via Mosco convergence of Dirichlet forms.</p><p class="card-text mt-2">A downstream consequence of this perspective appears in continuous-time finance: in joint work with Benjamin Vallejo (University of Colima), we show that the choice of noise interpretation shifts optimal portfolio weights in the Merton problem in a systematic and quantifiable way.</p></div></div></div></div></section><section class="py-3" id="erdos"><p class="text-muted">My Erdős number is 4: Me → Frank Redig → Pablo A. Ferrari → Peter E. Ney → Paul Erdős</p></section></div><section class="bg-light" id="footer"><div class="container"><div class="row"><div class="col-12 col-md-6"><h3>Contact</h3><address><strong>Technische Universität München</strong><br />School of Computation, Information and Technology<br />Chair for Analysis and Modelling<br />Boltzmannstraße 3, 85748 Garching, Germany<br /><a class="email-link" data-n="mario.ayala.valenzuela" data-d="gmail.com"></a></address></div><div class="col-12 col-md-6"><h3>Links</h3><nav class="list-unstyled"><li><a href="https://arxiv.org/search/?query=Ayala%2C+Mario&amp;searchtype=author&amp;abstracts=show&amp;order=-submitted_date&amp;size=200" target="_blank">arXiv profile</a></li><li><a href="https://orcid.org/0000-0001-5717-275X" target="_blank">ORCID: 0000-0001-5717-275X</a></li></nav></div></div></div></section></body></html>
+</div></div></section><section class="py-4" id="research">
+    <h2 class="mb-4">Research lines</h2>
+    <p>My work develops along three lines that share one toolbox, i.e. self-duality and Dirichlet forms. The map shows how they connect; the three sections below describe each line.</p>
+    <div class="rmap">
+      <div class="rmap-core">
+        <div class="rmap-label"><a href="/research.html#scaling">I. Scaling limits of interacting particle systems</a><span class="rmap-note">the core</span></div>
+        <div class="rmap-row3">
+        <div class="rmap-box l1">
+          <div class="rmap-head">Duality and fluctuations</div>
+          <ul>
+          <li><span><a href="https://arxiv.org/abs/1712.08492" target="_blank">Quantitative Boltzmann-Gibbs principles</a></span><span class="tag pub">JSP 2018</span></li>
+          <li><span><a href="https://arxiv.org/abs/2004.08412" target="_blank">Higher order fluctuation fields</a></span><span class="tag pub">EJP 2021</span></li>
+          <li><span>Duality for SPDEs via Wick powers</span><span class="tag prep">in prep.</span></li>
+          </ul>
+          <div class="rmap-open">
+            <span>&rarr; A duality theory at the fluctuation scale</span>
+          </div>
+        </div>
+        <div class="rmap-box l1">
+          <div class="rmap-head">Singular scaling limits</div>
+          <ul>
+          <li><span><a href="https://arxiv.org/abs/1906.09887" target="_blank">Condensation of SIP and sticky Brownian motion</a></span><span class="tag pub">JSP 2021</span></li>
+          <li><span><a href="https://arxiv.org/abs/2406.19088" target="_blank">Mosco convergence of independent particles</a></span><span class="tag sub">submitted</span></li>
+          <li><span><a href="https://arxiv.org/abs/2410.21933" target="_blank">SIP with long jumps</a></span><span class="tag pub">AHP 2026</span></li>
+          <li><span>Condensing SIP with <i>k</i> particles</span><span class="tag prep">in progress</span></li>
+          </ul>
+          <div class="rmap-open">
+            <span>&rarr; Fluctuations in the condensation regime</span>
+            <span>&rarr; Spaces of varying dimension</span>
+          </div>
+        </div>
+        <div class="rmap-box l1">
+          <div class="rmap-head">Beyond the density field</div>
+          <ul>
+          <li><span><a href="https://arxiv.org/abs/2512.20412" target="_blank">Collisions and fluxes in SEP</a></span><span class="tag sub">submitted</span></li>
+          <li><span>Contacts, cumulants and criticality</span><span class="tag prep">in prep.</span></li>
+          <li><span>Atomic limits and the Dean-Kawasaki equation</span><span class="tag prep">in prep.</span></li>
+          </ul>
+          <div class="rmap-open">
+            <span>&rarr; A scaling theory of non-conserved observables</span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="rmap-feed" aria-hidden="true"><span>&uarr;</span><span>&uarr;</span><span>&uarr;</span></div>
+      <div class="rmap-toolbox">
+        <div class="rmap-tool">
+          <b>Self-duality</b>
+          <div class="rmap-models"><span>IRW<i>Charlier</i></span><span>SEP<i>Krawtchouk</i></span><span>SIP<i>Meixner</i></span></div>
+        </div>
+        <div class="rmap-formula">&#120124;<sub>&eta;</sub> D(&xi;, &eta;<sub>t</sub>) = &#120124;<sub>&xi;</sub> D(&xi;<sub>t</sub>, &eta;)</div>
+        <div class="rmap-tool">
+          <b>Dirichlet forms</b>
+          <div class="rmap-models"><span>Mosco convergence</span></div>
+        </div>
+      </div>
+      <div class="rmap-row2">
+        <div>
+          <div class="rmap-drop">&darr; reversibility via Dirichlet forms</div>
+        <div class="rmap-box l2">
+          <div class="rmap-head"><a href="/research.html#effective">II. Effective dynamics</a></div>
+          <ul>
+          <li><span><a href="https://arxiv.org/abs/2511.03347" target="_blank">Reversibility and coarse-graining</a></span><span class="tag sub">submitted</span></li>
+          <li><span>SEP from monitored Bose-Hubbard</span><span class="tag prep">in prep.</span></li>
+          <li><span><a href="https://arxiv.org/abs/2602.08527" target="_blank">Merton problem under &alpha;-integrals</a></span><span class="tag sub">submitted</span></li>
+          <li><span>Portfolios under carbon regimes</span><span class="tag sub">submitted</span></li>
+          </ul>
+          <div class="rmap-open">
+            <span>&rarr; Fluctuating hydrodynamics without second moments</span>
+          </div>
+        </div>
+        </div>
+        <div class="rmap-bridge"><span aria-hidden="true">&harr;</span>slow-fast elimination: right equilibria, wrong rare events</div>
+        <div>
+          <div class="rmap-drop">&darr; duality, where the model allows it</div>
+        <div class="rmap-box l3">
+          <div class="rmap-head"><a href="/research.html#populations">III. Population models</a></div>
+          <ul>
+          <li><span><a href="https://arxiv.org/abs/2211.04563" target="_blank">Vector-borne viruses</a></span><span class="tag pub">ALEA 2024</span></li>
+          <li><span><a href="https://arxiv.org/abs/2405.08384" target="_blank">Measure-valued group dispersal</a></span><span class="tag sub">submitted</span></li>
+          <li><span>Cooperation through a shared medium</span><span class="tag prep">in prep.</span></li>
+          </ul>
+          <div class="rmap-open">
+            <span>&rarr; Duality as a modelling instrument</span>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="rmap-legend">
+        <span><span class="tag pub">JSP</span> published</span>
+        <span><span class="tag sub">submitted</span></span>
+        <span><span class="tag prep">in prep.</span></span>
+        <span>&rarr; open direction</span>
+        <span>Titles link to arXiv, line names to the papers of each line.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-4" id="line-scaling">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">I. Scaling limits of interacting particle systems</h5>
+            <p class="card-text">This is the core of my work. My main laboratory consists of three conservative particle systems, independent random walkers, the symmetric exclusion process (SEP) and the symmetric inclusion process (SIP), which are self-dual with orthogonal duality polynomials, i.e. Charlier, Krawtchouk and Meixner polynomials respectively. Much of this work has been developed in collaboration with Frank Redig (TU Delft) and Gioia Carinci (University of Modena and Reggio Emilia).</p>
+            <h6 class="card-subtitle mt-3">Duality and fluctuations</h6>
+            <p class="card-text mt-2">The density fluctuation field is the first term of an orthogonal expansion in duality polynomials, and the higher terms are objects in their own right. Along these lines we obtain quantitative Boltzmann-Gibbs principles, and we introduce higher order fluctuation fields, whose scaling limits satisfy a recursive martingale problem corresponding to the powers of a generalized Ornstein-Uhlenbeck process. In work in preparation with Frank Redig we prove a duality relation at the level of the SPDE, in which the duality functions are the Wick powers of the field and the dual process is a system of independent Brownian motions.</p>
+            <h6 class="card-subtitle mt-3">Singular limits and Mosco convergence</h6>
+            <p class="card-text mt-2">Duality reduces a many-particle question to a few-particle one, but the few-particle process may still have a singular scaling limit, and Mosco convergence of Dirichlet forms is the right notion in those cases. With its help we show that the distance between two condensively rescaled SIP particles converges to sticky Brownian motion, which gives the variance of the density field in the condensation regime. I show that Mosco convergence tensorizes to any number of independent particles, and with Johannes Zimmer (TU München) we obtain the non-local hydrodynamics and fluctuations of SIP with long jumps. Work in progress extends the condensation result from two particles to <i>k</i>.</p>
+            <h6 class="card-subtitle mt-3">Beyond the density field</h6>
+            <p class="card-text mt-2">The hydrodynamic limit keeps the conserved quantity and discards everything else, and a recurring question in my recent work is what the discarded observables do under scaling. With Michiel Renger (TU München) we study collisions and fluxes in SEP, where the unidirectional fluxes are deterministic whereas the net collision count converges to a space-time white noise, and, in work in preparation, the cumulants of contacts at criticality. With Nicolas Dirr (Cardiff University) and Johannes Zimmer we show that for a fixed number <i>k</i> of particles, independent walkers, SEP and SIP have the same atomic limit, i.e. the unique atomic solution of the Dean-Kawasaki martingale problem.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-4" id="line-effective">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">II. Effective dynamics and coarse-graining</h5>
+            <p class="card-text">Most stochastic models are reduced descriptions: a Langevin equation is obtained by eliminating fast degrees of freedom, a hydrodynamic equation by averaging over particles, and a classical Markov chain by eliminating quantum coherences. The question behind this line is when such a reduced description is faithful to the dynamics it comes from.</p>
+            <p class="card-text mt-2">With Nicolas Dirr, Grigorios Pavliotis (Imperial College London) and Johannes Zimmer we obtain algebraic conditions under which a diffusion with multiplicative noise is reversible, for a parameter interpolating between the It&ocirc;, Stratonovich and Klimontovich interpretations of the noise, and we show that both reversibility and the Klimontovich interpretation are preserved under coarse-graining. With Johannes Zimmer, in work in preparation, we obtain the exclusion process as the effective classical dynamics of a Bose-Hubbard model under continuous monitoring of the local particle numbers.</p>
+            <p class="card-text mt-2">The same question appears in continuous-time finance. With Benjam&iacute;n Vallejo Jim&eacute;nez (University of Colima) we revisit the Merton consumption-investment problem when risky returns are interpreted through a general stochastic integral, and we keep two experiments apart: if the drift is transformed together with the convention, the optimal policy is invariant, whereas if the nominal drift is held fixed, the investment opportunity set changes.</p>
+            <p class="card-text mt-2">The same consumption-investment problem is the starting point of a submitted paper led by Benjam&iacute;n Vallejo Jim&eacute;nez, with Ricardo Castellanos Curiel and Miguel &Aacute;ngel Tinoco Zerme&ntilde;o, in which carbon-footprint exposure enters the wealth dynamics as a pecuniary cost. With logarithmic utility the problem is solved in closed form, and the optimal portfolio splits into the Merton demand and a carbon-cost correction.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mb-4" id="line-populations">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">III. Stochastic population models</h5>
+            <p class="card-text">The same mathematics applies to individual-based models of populations, and this is in fact where my interest in stochastic processes started: as an undergraduate at the Mathematical and Theoretical Biology Institute of Arizona State University I worked on the dynamics of chytridiomycosis in a harlequin frog population.</p>
+            <p class="card-text mt-2">During my postdoctoral position at INRAE, with J&eacute;r&ocirc;me Coville, Rapha&euml;l Forien and Samuel Soubeyrand, I worked on measure-valued models that follow each individual of a population: a model for vector-borne viruses structured by a phenotype trait, for which we obtain the law of large numbers and the fluctuations at the landscape scale, and a model for grouped dispersal, whose large population limit is a degenerate ultra-parabolic system of PDEs.</p>
+            <p class="card-text mt-2">With Johannes Zimmer, in work in preparation, we model populations that cooperate through a shared environment, such as quorum sensing, treating both the cells and the medium as interacting particle systems. The result I find most interesting is that the speed of the medium leaves every mean-field equilibrium unchanged and nevertheless changes the barrier governing rare collapse, i.e. postulating the reaction-diffusion equation gives the right equilibria and the wrong rare events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><section class="py-3" id="erdos"><p class="text-muted">My Erdős number is 4: Me → Frank Redig → Pablo A. Ferrari → Peter E. Ney → Paul Erdős</p></section></div><section class="bg-light" id="footer"><div class="container"><div class="row"><div class="col-12 col-md-6"><h3>Contact</h3><address><strong>Technische Universität München</strong><br />School of Computation, Information and Technology<br />Chair for Analysis and Modelling<br />Boltzmannstraße 3, 85748 Garching, Germany<br /><a class="email-link" data-n="mario.ayala.valenzuela" data-d="gmail.com"></a></address></div><div class="col-12 col-md-6"><h3>Links</h3><nav class="list-unstyled"><li><a href="https://arxiv.org/search/?query=Ayala%2C+Mario&amp;searchtype=author&amp;abstracts=show&amp;order=-submitted_date&amp;size=200" target="_blank">arXiv profile</a></li><li><a href="https://orcid.org/0000-0001-5717-275X" target="_blank">ORCID: 0000-0001-5717-275X</a></li></nav></div></div></div></section></body></html>

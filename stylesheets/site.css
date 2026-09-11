@@ -7412,3 +7412,11 @@ section#page-banner {
 #other-work.pub-hidden {
   display: none;
 }
+
+/* --- Navbar on small screens: keep the brand and the menu button off the screen edges --- */
+@media (max-width: 991.98px) {
+  .mario-app .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
