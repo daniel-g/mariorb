@@ -1,11 +1,281 @@
-<!DOCTYPE html><html><head><meta charset="utf-8" /><meta content="ie=edge" http-equiv="x-ua-compatible" /><meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /><title>Mario Ayala</title><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" /><link href="/stylesheets/site.css" rel="stylesheet" /><script src="/javascripts/site.js"></script><script src="/javascripts/particles.js"></script></head><body class="mario-app"><nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="/"> Almost Surely Mario</a><button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto"><li class="nav-item"><a href="/" class="nav-link">Home<span class="sr-only" current=""></span></a></li><li class="nav-item"><a href="/research.html" class="nav-link">Research</a></li><li class="nav-item"><a href="/diffusion.html" class="nav-link">Diffusion lab</a></li><li class="nav-item active"><a href="/simulations.html" class="nav-link">Simulations</a></li><li class="nav-item"><a href="/files/CvMarioAyala.pdf" class="nav-link" target="_blank">CV</a></li></ul></div></div></nav><div class="container py-3" id="main"><section id="simulations"><h2>Simulations</h2><div class="row"><div class="col"><p>Here I present some short videos of simulations of Independent and SIP particles. The goal is to show how in the SIP case particles, a sort of condensation phenomena starts to emerge.</p>
-</div></div><h4>Independent Particles
-    <div class>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/5BWwDwXJIpI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div></h4><h4>SIP Particles
-    <div class>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Sg3w1mtSeOU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div></h4><h4>SIP Particles
-    <div class>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/6VDwK6vw_wI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div></h4></section></div><section class="bg-light" id="footer"><div class="container"><div class="row"><div class="col-12 col-md-6"><h3>Contact</h3><address><strong>Technische Universität München</strong><br />School of Computation, Information and Technology<br />Chair for Analysis and Modelling<br />Boltzmannstraße 3, 85748 Garching, Germany<br /><a class="email-link" data-n="mario.ayala.valenzuela" data-d="gmail.com"></a></address></div><div class="col-12 col-md-6"><h3>Links</h3><nav class="list-unstyled"><li><a href="https://arxiv.org/search/?query=Ayala%2C+Mario&amp;searchtype=author&amp;abstracts=show&amp;order=-submitted_date&amp;size=200" target="_blank">arXiv profile</a></li><li><a href="https://orcid.org/0000-0001-5717-275X" target="_blank">ORCID: 0000-0001-5717-275X</a></li></nav></div></div></div></section></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <title>Mario Ayala · Simulations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="/stylesheets/site.css" rel="stylesheet" />
+  <link href="/stylesheets/ips-lab.css?v=2" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+  <script src="/javascripts/site.js"></script>
+  <script src="/javascripts/particles.js?v=dev5"></script>
+  <script src="/javascripts/ips-lab.js?v=2"></script>
+</head>
+<body class="mario-app">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/"> Almost Surely Mario</a>
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/research.html" class="nav-link">Research</a></li>
+          <li class="nav-item active"><a href="/simulations.html" class="nav-link">Simulations</a></li>
+          <li class="nav-item"><a href="/files/CvMarioAyala.pdf" class="nav-link" target="_blank">CV</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-3" id="main">
+
+  <section id="page-banner" class="sim-banner">
+    <canvas id="particles"></canvas>
+    <div class="page-banner-inner container">
+      <h1 class="page-banner-title">Simulations</h1>
+      <p class="page-banner-sub">Interacting particle systems in your browser</p>
+    </div>
+  </section>
+
+  <section class="ips-prose" id="ips-intro">
+    <h2>One generator, three models</h2>
+
+    <p>On this page you can run three of the particle systems I work with: independent random walkers, the symmetric exclusion process and the symmetric inclusion process. When we watch them they look very different. Nevertheless, they come from a single formula, in which one parameter selects the model.</p>
+
+    <p>We consider particles on a ring of \(L\) sites and denote by \(\eta_x\) the number of particles at site \(x\). A particle at \(x\) jumps to \(y = x + r\) at a rate that depends only on the occupations of the two sites involved. More precisely, the dynamics is given by the generator:</p>
+    \[
+    \mathcal L f(\eta) \;=\; \sum_{x}\sum_{r} p(r)\,\eta_x\,(\alpha + \sigma\,\eta_{x+r})\,\big[f(\eta^{x,x+r}) - f(\eta)\big],
+    \]
+    <p>where \(\eta^{x,y}\) denotes the configuration obtained from \(\eta\) by moving one particle from \(x\) to \(y\), and \(p(r) = p(-r)\) is a symmetric jump kernel; in the simulation \(p(r) = 1/(2R)\) for \(1 \le |r| \le R\). The whole interaction sits in the factor \(\alpha + \sigma\,\eta_y\), and the value of \(\sigma\) selects the model:</p>
+    <ul>
+      <li>\(\sigma = 0\) gives independent random walkers (IRW). The rate \(\alpha\,\eta_x\) does not see the target site, i.e. every particle moves on its own at rate \(\alpha\).</li>
+      <li>\(\sigma = -1\) gives the symmetric exclusion process SEP\((\alpha)\). The rate \(\eta_x(\alpha - \eta_y)\) vanishes as soon as \(y\) holds \(\alpha\) particles, hence \(\alpha \in \mathbb N\) is the maximal occupation of a site.</li>
+      <li>\(\sigma = +1\) gives the symmetric inclusion process SIP\((\alpha)\). The rate \(\eta_x(\alpha + \eta_y)\) grows with the number of particles already at \(y\): particles attract each other, and the smaller \(\alpha\), the stronger this attraction compared with the free motion.</li>
+    </ul>
+    <p>This unified description is the one we use in our work on <a href="https://arxiv.org/abs/2004.08412" target="_blank">higher order fluctuation fields</a>. The same factor also builds the invariant measures: for every density \(\rho\), the product measure whose one-site marginal \(\nu_\rho\) satisfies</p>
+    \[
+    \frac{\nu_\rho(k+1)}{\nu_\rho(k)} \;=\; \frac{\alpha + \sigma k}{k+1}\cdot\frac{\rho}{\alpha + \sigma\rho}
+    \]
+    <p>is reversible, i.e. \(\nu_\rho\) is Poisson for IRW, Binomial for SEP and Negative Binomial for SIP.</p>
+
+    <p>Pick a model, set the parameters and press play. The panels run together: the particles, their fluctuations around the mean, a space-time picture of the whole history, and the share of particles in the largest pile. The experiments discussed further down can be loaded with the buttons at the end of each section.</p>
+  </section>
+
+  <section id="ips-lab" class="ips-lab">
+    <div class="pub-filter-bar ips-model-bar">
+      <button class="pub-filter-btn" data-sigma="0">Independent walkers, σ = 0</button>
+      <button class="pub-filter-btn" data-sigma="-1">Exclusion, σ = −1</button>
+      <button class="pub-filter-btn" data-sigma="1">Inclusion, σ = +1</button>
+    </div>
+    <div class="ips-rate-line">Rate of a jump from \(x\) to \(y\): <span id="ips-rate"></span></div>
+
+    <div class="ips-grid">
+      <label class="ips-field"><span>Parameter \(\alpha\) = <b id="ips-alpha-val"></b></span>
+        <input type="range" id="ips-alpha" min="0" max="1000" /></label>
+      <label class="ips-field"><span>Particles \(N\) = <b id="ips-n-val"></b>, density \(N/L\) = <b id="ips-rho-val"></b></span>
+        <input type="range" id="ips-n" min="0" max="1000" /></label>
+      <label class="ips-field"><span>Sites \(L\) = <b id="ips-l-val"></b></span>
+        <input type="range" id="ips-l" min="10" max="300" step="1" /></label>
+      <label class="ips-field"><span>Jump range \(R\) = <b id="ips-r-val"></b></span>
+        <input type="range" id="ips-r" min="1" max="5" step="1" /></label>
+      <label class="ips-field"><span>Start from</span>
+        <select id="ips-init">
+          <option value="even">Evenly spread</option>
+          <option value="equilibrium">Equilibrium sample</option>
+          <option value="bump">Cosine bump</option>
+          <option value="half">Block in the middle</option>
+          <option value="one">All on one site</option>
+        </select></label>
+      <label class="ips-field"><span><span id="ips-speed-label"></span> = <b id="ips-speed-val"></b></span>
+        <input type="range" id="ips-speed" min="0" max="1000" /></label>
+    </div>
+
+    <div class="ips-actions">
+      <div class="ips-group">Clock
+        <div class="ips-seg">
+          <button data-clock="real">Real time</button>
+          <button data-clock="log">Log time</button>
+          <button data-clock="jump">Jump by jump</button>
+        </div>
+      </div>
+      <div class="ips-group">
+        <button class="ips-btn" id="ips-play">Pause</button>
+        <button class="ips-btn ghost" id="ips-step">One jump</button>
+        <button class="ips-btn ghost" id="ips-restart">Restart</button>
+      </div>
+      <div class="ips-group">Experiments
+        <button class="ips-btn ghost" data-preset="condensation">Condensation</button>
+        <button class="ips-btn ghost" data-preset="hydro">Heat equation</button>
+        <button class="ips-btn ghost" data-preset="exclusion">Exclusion</button>
+        <button class="ips-btn ghost" data-preset="fluctuations">Fluctuations</button>
+      </div>
+    </div>
+
+    <div class="ips-status">
+      \(t\) = <b id="ips-t"></b> &nbsp;·&nbsp; jumps <b id="ips-jumps"></b> &nbsp;·&nbsp; total rate <b id="ips-total"></b>
+      <span id="ips-capped" class="warn" hidden>&nbsp;·&nbsp; the clock is slowed down to keep the page responsive</span>
+    </div>
+
+    <div class="ips-panels">
+      <figure class="ips-panel ips-full">
+        <div class="ips-panel-head">
+          <div>
+            <h4 class="ips-panel-title">Particles</h4>
+            <p class="ips-panel-sub">Each dot is a particle, stacked at its site on the ring.</p>
+          </div>
+          <div class="ips-legend">
+            <span><i class="sw sw-gold"></i>exact mean \(\mathbb E[\eta_x(t)]\)</span>
+            <label><input type="checkbox" id="ips-show-avg" checked /><i class="sw sw-white"></i>local average</label>
+            <label><input type="checkbox" id="ips-sqrt" />compress tall piles</label>
+          </div>
+        </div>
+        <canvas id="ips-particles"></canvas>
+      </figure>
+
+      <figure class="ips-panel ips-wide">
+        <div class="ips-panel-head">
+          <div>
+            <h4 class="ips-panel-title">Fluctuations</h4>
+            <p class="ips-panel-sub">How far each site is from its mean, \(\eta_x - \mathbb E[\eta_x(t)]\).</p>
+          </div>
+          <div class="ips-legend">
+            <span><i class="sw sw-band"></i>band \(\pm 2\sqrt{\rho + \sigma\rho^2/\alpha}\)</span>
+            <span>mean square <b id="ips-var-obs"></b>, prediction <b id="ips-var-pred"></b></span>
+          </div>
+        </div>
+        <canvas id="ips-fluct"></canvas>
+      </figure>
+
+      <figure class="ips-panel">
+        <div class="ips-panel-head">
+          <div>
+            <h4 class="ips-panel-title">One-site law</h4>
+            <p class="ips-panel-sub">How many sites hold \(k\) particles.</p>
+          </div>
+          <div class="ips-legend">
+            <span><i class="sw sw-dot"></i>this run</span>
+            <span><i class="sw sw-gold"></i>equilibrium on this ring</span>
+          </div>
+        </div>
+        <canvas id="ips-hist"></canvas>
+      </figure>
+
+      <figure class="ips-panel ips-wide">
+        <div class="ips-panel-head">
+          <div>
+            <h4 class="ips-panel-title">Space-time</h4>
+            <p class="ips-panel-sub">The whole run, from the start (top) to now (bottom). Brighter means more particles.</p>
+          </div>
+        </div>
+        <div class="ips-kymo-wrap">
+          <canvas id="ips-kymo"></canvas>
+          <span id="ips-kymo-top"></span>
+          <span id="ips-kymo-bottom"></span>
+        </div>
+      </figure>
+
+      <figure class="ips-panel">
+        <div class="ips-panel-head">
+          <div>
+            <h4 class="ips-panel-title">Largest pile</h4>
+            <p class="ips-panel-sub">Shares against \(\log t\).</p>
+          </div>
+          <div class="ips-legend">
+            <span><i class="sw sw-gold"></i>largest pile</span>
+            <span><i class="sw sw-dot"></i>empty sites</span>
+            <span><i class="sw sw-dash"></i>equilibrium</span>
+          </div>
+        </div>
+        <canvas id="ips-order"></canvas>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ips-prose" id="ips-guide">
+    <h2>What to look for</h2>
+
+    <h3>The mean: the three models look the same</h3>
+    <p>Let us start with the average number of particles at a site. Applying the generator to \(\eta_x\), the terms containing \(\sigma\) cancel thanks to the symmetry of \(p\), and we obtain a closed equation:</p>
+    \[
+    \frac{d}{dt}\,\mathbb E[\eta_x(t)] \;=\; \alpha \sum_{r} p(r)\,\big(\mathbb E[\eta_{x+r}(t)] - \mathbb E[\eta_x(t)]\big),
+    \]
+    <p>i.e. the mean occupation solves the discrete heat equation for every value of \(\sigma\). This is the gold curve in the particle panel: it is computed exactly from this equation, not from the simulation. Rescaling space by \(L\) and time by \(L^2\), the empirical density converges to the solution of the heat equation \(\partial_t\rho = \tfrac{\chi\alpha}{2}\,\Delta\rho\), with \(\chi = \sum_r r^2 p(r)\). Notice that this hydrodynamic limit does not distinguish independent, exclusion or inclusion particles: at this scale \(\sigma\) is invisible. The white curve is the occupation averaged over a few neighbouring sites, and with many particles per site it follows the gold one closely. While the experiment runs, switch to inclusion particles: the gold curve continues as if nothing had happened.</p>
+    <p><button class="ips-try" data-preset="hydro" data-scroll>Run this experiment</button></p>
+
+    <h3>Fluctuations: where \(\sigma\) appears</h3>
+    <p>The interaction becomes visible as soon as we look at the noise around the mean. Under \(\nu_\rho\) the variance of the occupation of one site is given by:</p>
+    \[
+    \operatorname{Var}_{\nu_\rho}(\eta_x) \;=\; \frac{\rho\,(\alpha + \sigma\rho)}{\alpha} \;=\; \rho + \sigma\,\frac{\rho^2}{\alpha}.
+    \]
+    <p>Hence exclusion reduces the noise with respect to independent walkers, and inclusion increases it. In the experiment below \(\rho = 2\) and \(\alpha = 4\), so that the three variances are \(1\), \(2\) and \(3\). The fluctuation panel shows \(\eta_x - \mathbb E[\eta_x(t)]\) together with the band \(\pm 2\sqrt{\rho + \sigma\rho^2/\alpha}\) evaluated at the current mean, and the two numbers above it compare the mean square of the fluctuations with this prediction. The histogram next to it compares the occupations of all sites, averaged over the last few seconds, with the one-site law of the equilibrium on this ring, i.e. with exactly \(N\) particles on \(L\) sites. Switch between the three models while it runs and watch the band and the histogram change.</p>
+    <p>On large scales these fluctuations are described by the density fluctuation field \(Y^L_t(\varphi) = L^{-1/2}\sum_x \varphi(x/L)\,\big(\eta_x(tL^2) - \rho\big)\). In equilibrium at density \(\rho\) it converges to the Ornstein-Uhlenbeck process solving</p>
+    \[
+    dY_t \;=\; \tfrac{\chi\alpha}{2}\,\Delta Y_t\,dt \;+\; \sqrt{\chi\rho\,(\alpha+\sigma\rho)}\;\nabla dW_t,
+    \]
+    <p>where \(W\) is space-time white noise. Once more \(\sigma\) enters only through the factor \(\rho(\alpha + \sigma\rho)\), now in the strength of the noise. In the paper mentioned above we go further, to fields built from orthogonal duality polynomials of higher order in the occupation variables.</p>
+    <p><button class="ips-try" data-preset="fluctuations" data-scroll>Run this experiment</button></p>
+
+    <h3>Condensation in the inclusion process</h3>
+    <p>For small \(\alpha\) the variance \(\rho + \rho^2/\alpha\) of SIP is much larger than \(\rho^2\), and then a typical site is far from the average. More precisely, the probability of finding a site empty is \(\nu_\rho(0) = (1 + \rho/\alpha)^{-\alpha}\), which tends to one as \(\alpha \to 0\) at fixed \(\rho\): most sites are empty, and the few that are not carry almost all the particles. With \(\rho = 10\) and \(\alpha = 0.01\), about 93% of the sites are empty. This is what we call condensation. On a finite ring the effect is even stronger. With exactly \(N\) particles on \(L\) sites and \(\rho = N/L\), the variance of one site is given by:</p>
+    \[
+    \rho\,\Big(1 - \frac1L\Big)\,\frac{\alpha + \sigma\rho}{\alpha + \sigma/L},
+    \]
+    <p>which for \(\sigma = 1\) and \(\alpha \ll 1/L\) is close to \(\rho^2(L-1)\), i.e. the variance of a configuration with all the particles on a single site.</p>
+    <p>The difficulty in watching condensation happen is the separation of time scales. Two neighbouring piles of sizes \(\lambda\) and \(\mu\) exchange particles at rate of order \(\lambda\mu\), so starting from an even configuration the piles form after a time of order one. Afterwards a pile only moves when one of its particles leaves, which happens at rate \(\lambda\alpha\), and the new site takes over the whole pile with probability of order \(1/\lambda\). Hence a pile moves at rate of order \(\alpha\), independently of its size, and the piles merge only on times of order \(1/\alpha\) and longer. In the experiment below (\(\alpha = 0.01\)) more than half of the sites are empty by \(t = 10\), while it takes until \(t \approx 10^4\) for the largest pile to hold most of the particles.</p>
+    <p>A clock running in real time shows either the first phase as a blur or the second one frozen. For this reason the experiment runs on a logarithmic clock: every decade of \(t\) takes the same time on the screen, so that the formation of the piles and their slow merging get the same attention. The time \(t\) displayed above the panels is always the true time of the process. The space-time panel shows the whole story in one picture: many thin lines appear, and then they merge into a few bright ones that wander slowly. The small panel next to it follows the share of particles in the largest pile and the fraction of empty sites, the dashed line being the equilibrium value of the latter. Compare with independent walkers at the same density: the largest pile stays small, and empty sites are exponentially rare.</p>
+    <p>For two particles, the rigorous counterpart of this picture is our paper <a href="https://arxiv.org/abs/1906.09887" target="_blank">Condensation of SIP particles and sticky Brownian motion</a>, where in the regime \(\alpha \to 0\) the distance between two SIP particles converges to a sticky Brownian motion.</p>
+    <p><button class="ips-try" data-preset="condensation" data-scroll>Run this experiment</button></p>
+
+    <h3>How the simulation works</h3>
+    <p>The simulation is exact, in the sense that it samples the Markov process with the generator above without any time discretisation. At every step the next jump \(x \to y\) is chosen with probability proportional to its rate \(p(y-x)\,\eta_x(\alpha + \sigma\eta_y)\), and the clock advances by an exponential time whose parameter is the total rate. The rates of all sites are kept in a binary tree, so that each jump costs of order \(\log L\) operations and a laptop performs several million jumps per second. Everything runs in your browser.</p>
+  </section>
+
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.renderMathInElement) return;
+      ['ips-intro', 'ips-lab', 'ips-guide'].forEach(function(id) {
+        renderMathInElement(document.getElementById(id), {
+          delimiters: [
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
+          ]
+        });
+      });
+    });
+  </script>
+
+  <section class="bg-light" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h3>Contact</h3>
+          <address>
+            <strong>Technische Universität München</strong><br />
+            School of Computation, Information and Technology<br />
+            Chair for Analysis and Modelling<br />
+            Boltzmannstraße 3, 85748 Garching, Germany<br />
+            <a class="email-link" data-n="mario.ayala.valenzuela" data-d="gmail.com"></a>
+          </address>
+        </div>
+        <div class="col-12 col-md-6">
+          <h3>Links</h3>
+          <nav class="list-unstyled">
+            <li><a href="https://arxiv.org/search/?query=Ayala%2C+Mario&amp;searchtype=author&amp;abstracts=show&amp;order=-submitted_date&amp;size=200" target="_blank">arXiv profile</a></li>
+            <li><a href="https://orcid.org/0000-0001-5717-275X" target="_blank">ORCID: 0000-0001-5717-275X</a></li>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
