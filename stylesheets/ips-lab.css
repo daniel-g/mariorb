@@ -316,3 +316,33 @@
   .ips-panel { padding: 0.8rem 0.8rem 0.9rem; }
   #ips-particles { height: 240px; }
 }
+
+/* the talk photo next to the introduction */
+.ips-photo {
+  float: right;
+  width: 230px;
+  margin: 0.35rem 0 1rem 1.6rem;
+}
+
+.ips-photo img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(12, 26, 46, 0.12);
+}
+
+.ips-photo figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #6c757d;
+}
+
+@media (max-width: 767px) {
+  .ips-photo {
+    float: none;
+    width: auto;
+    max-width: 300px;
+    margin: 0 auto 1.4rem;
+  }
+}
