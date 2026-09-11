@@ -920,11 +920,19 @@
     layout();
     restart();
 
+    // the simulation only runs while the lab is on screen, to spare batteries
+    var onScreen = true;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        onScreen = entries[0].isIntersecting;
+      }).observe(root);
+    }
+
     var last = performance.now();
     function frame(now) {
       var dt = Math.min(0.1, (now - last) / 1000);
       last = now;
-      if (S.playing) {
+      if (S.playing && onScreen) {
         var n = advance(dt);
         if (n > 0 || S.clock !== 'jump') {
           tickKymo();

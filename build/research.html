@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-  <title>Mario Ayala — Publications</title>
+  <title>Mario Ayala · Research</title>
+  <meta name="description" content="Publications and preprints of Mario Ayala, sorted by research line, with a map of his collaborators." />
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Almost Surely Mario" />
+  <meta property="og:title" content="Mario Ayala · Research" />
+  <meta property="og:description" content="Publications and preprints of Mario Ayala, sorted by research line, with a map of his collaborators." />
+  <meta property="og:url" content="https://www.almostsurelymario.com/research.html" />
+  <meta property="og:image" content="https://www.almostsurelymario.com/images/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="/stylesheets/site.css" rel="stylesheet" />
-  <script src="/javascripts/site.js"></script>
+  <link href="/stylesheets/site.css?v=2" rel="stylesheet" />
+  <script src="/javascripts/site.js?v=3"></script>
   <script src="/javascripts/particles.js?v=dev5"></script>
-  <script src="/javascripts/collab-map.js"></script>
+  <script src="/javascripts/collab-map.js?v=3"></script>
 </head>
 <body class="mario-app">
 
@@ -36,7 +49,7 @@
     <canvas id="particles"></canvas>
     <div class="page-banner-inner container">
       <h1 class="page-banner-title">Publications</h1>
-      <p class="page-banner-sub">Research collaborators — hover a node to explore</p>
+      <p class="page-banner-sub">Research collaborators: hover or tap a node to explore</p>
     </div>
     <div class="map-container">
       <canvas id="collab-map"></canvas>
@@ -45,9 +58,9 @@
   </section>
 
   <div class="pub-filter-bar py-3">
-    <button class="pub-filter-btn" data-filter="fluctuations">Fluctuation fields</button>
-    <button class="pub-filter-btn" data-filter="duality">Duality</button>
-    <button class="pub-filter-btn" data-filter="noise">Noise &amp; finance</button>
+    <button class="pub-filter-btn" data-filter="scaling">Scaling limits</button>
+    <button class="pub-filter-btn" data-filter="effective">Effective dynamics</button>
+    <button class="pub-filter-btn" data-filter="populations">Population models</button>
     <button class="pub-filter-btn" data-filter="other">Other work</button>
   </div>
 
@@ -57,45 +70,30 @@
       <h2 class="mb-4">Publications and preprints</h2>
       <div class="pub-cards">
 
-        <div class="card mb-3" data-cat="noise">
+        <div class="card mb-3" data-cat="effective">
           <div class="card-body">
-            <div class="pub-title">Consumption–Investment with anticipative noise</div>
+            <div class="pub-title">Closed-form consumption and portfolios under carbon regimes</div>
+            <div class="pub-authors">Benjamín Vallejo Jiménez, Ricardo Castellanos Curiel, Miguel Ángel Tinoco Zermeño, and Mario Ayala.</div>
+            <div class="pub-venue">Submitted, 2026.</div>
+          </div>
+        </div>
+
+        <div class="card mb-3" data-cat="effective">
+          <div class="card-body">
+            <div class="pub-title">Consumption-investment under alternative stochastic-integral conventions</div>
             <div class="pub-authors">Mario Ayala and Benjamín Vallejo Jiménez.</div>
-            <div class="pub-venue">Preprint, 2026.</div>
+            <div class="pub-venue">Submitted, 2026.</div>
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2602.08527" target="_blank">arXiv</a>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="fluctuations">
+        <div class="card mb-3" data-cat="scaling">
           <div class="card-body">
-            <div class="pub-title">Hydrodynamic limits of collisions and fluxes in the exclusion process</div>
-            <div class="pub-authors">Mario Ayala and D. R. Michiel Renger.</div>
-            <div class="pub-venue">Preprint, 2025.</div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2512.20412" target="_blank">arXiv</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3" data-cat="noise">
-          <div class="card-body">
-            <div class="pub-title">Reversibility, covariance and coarse-graining for Langevin dynamics: On the choice of multiplicative noise</div>
-            <div class="pub-authors">Mario Ayala, Nicolas Dirr, Grigorios A. Pavliotis, and Johannes Zimmer.</div>
-            <div class="pub-venue">Preprint, 2025.</div>
-            <div class="pub-links">
-              <a href="https://arxiv.org/abs/2511.03347" target="_blank">arXiv</a>
-              <a href="https://mediatum.ub.tum.de/node?id=1837046" target="_blank">TUM record</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card mb-3" data-cat="fluctuations">
-          <div class="card-body">
-            <div class="pub-title">Hydrodynamic Limits and Non-equilibrium Fluctuations for the Symmetric Inclusion Process with Long Jumps</div>
+            <div class="pub-title">Hydrodynamic limits and non-equilibrium fluctuations for the symmetric inclusion process with long jumps</div>
             <div class="pub-authors">Mario Ayala and Johannes Zimmer.</div>
-            <div class="pub-venue"><em>Annales Henri Poincaré</em>, 2025.</div>
+            <div class="pub-venue"><em>Annales Henri Poincaré</em>, 27(7), 2685–2721, 2026.</div>
             <div class="pub-links">
               <a href="https://link.springer.com/article/10.1007/s00023-025-01611-w" target="_blank">Journal</a>
               <a href="https://arxiv.org/abs/2410.21933" target="_blank">arXiv</a>
@@ -103,22 +101,45 @@
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="duality">
+        <div class="card mb-3" data-cat="scaling">
+          <div class="card-body">
+            <div class="pub-title">Hydrodynamic limits of collisions and fluxes in the exclusion process</div>
+            <div class="pub-authors">Mario Ayala and D. R. Michiel Renger.</div>
+            <div class="pub-venue">Submitted, 2025.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2512.20412" target="_blank">arXiv</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3" data-cat="effective">
+          <div class="card-body">
+            <div class="pub-title">Reversibility, covariance and coarse-graining for Langevin dynamics: on the choice of multiplicative noise</div>
+            <div class="pub-authors">Mario Ayala, Nicolas Dirr, Grigorios A. Pavliotis, and Johannes Zimmer.</div>
+            <div class="pub-venue">Submitted, 2025.</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2511.03347" target="_blank">arXiv</a>
+              <a href="https://mediatum.ub.tum.de/node?id=1837046" target="_blank">mediaTUM</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-3" data-cat="scaling">
           <div class="card-body">
             <div class="pub-title">Mosco convergence of independent particles and applications to particle systems with self-duality</div>
             <div class="pub-authors">Mario Ayala.</div>
-            <div class="pub-venue">Preprint, 2024.</div>
+            <div class="pub-venue">Submitted, 2024.</div>
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2406.19088" target="_blank">arXiv</a>
             </div>
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="">
+        <div class="card mb-3" data-cat="populations">
           <div class="card-body">
-            <div class="pub-title">Group Dispersal Modelling Revisited</div>
+            <div class="pub-title">Group dispersal modelling revisited</div>
             <div class="pub-authors">Mario Ayala, Jérôme Coville, and Samuel Soubeyrand.</div>
-            <div class="pub-venue">Preprint, 2024.</div>
+            <div class="pub-venue">Submitted, 2024.</div>
             <div class="pub-links">
               <a href="https://arxiv.org/abs/2405.08384" target="_blank">arXiv</a>
               <a href="https://hal.science/hal-04561082" target="_blank">HAL</a>
@@ -126,11 +147,11 @@
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="">
+        <div class="card mb-3" data-cat="populations">
           <div class="card-body">
             <div class="pub-title">A measure-valued stochastic model for vector-borne viruses</div>
             <div class="pub-authors">Mario Ayala, Jérôme Coville, and Raphaël Forien.</div>
-            <div class="pub-venue"><em>ALEA: Latin American Journal of Probability and Mathematical Statistics</em>, 21, 1145–1193, 2024.</div>
+            <div class="pub-venue"><em>ALEA Latin American Journal of Probability and Mathematical Statistics</em>, 21, 1145–1193, 2024.</div>
             <div class="pub-links">
               <a href="https://alea.impa.br/articles/v21/21-45.pdf" target="_blank">Journal PDF</a>
               <a href="https://arxiv.org/abs/2211.04563" target="_blank">arXiv</a>
@@ -138,11 +159,11 @@
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="fluctuations duality">
+        <div class="card mb-3" data-cat="scaling">
           <div class="card-body">
-            <div class="pub-title">Condensation of SIP Particles and Sticky Brownian Motion</div>
+            <div class="pub-title">Condensation of SIP particles and sticky Brownian motion</div>
             <div class="pub-authors">Mario Ayala, Gioia Carinci, and Frank Redig.</div>
-            <div class="pub-venue"><em>Journal of Statistical Physics</em>, 183, article 40, 2021.</div>
+            <div class="pub-venue"><em>Journal of Statistical Physics</em>, 183(3), article 40, 2021.</div>
             <div class="pub-links">
               <a href="https://link.springer.com/article/10.1007/s10955-021-02775-5" target="_blank">Journal</a>
               <a href="https://arxiv.org/abs/1906.09887" target="_blank">arXiv</a>
@@ -150,7 +171,7 @@
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="fluctuations duality">
+        <div class="card mb-3" data-cat="scaling">
           <div class="card-body">
             <div class="pub-title">Higher order fluctuation fields and orthogonal duality polynomials</div>
             <div class="pub-authors">Mario Ayala, Gioia Carinci, and Frank Redig.</div>
@@ -162,11 +183,11 @@
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="fluctuations duality">
+        <div class="card mb-3" data-cat="scaling">
           <div class="card-body">
-            <div class="pub-title">Quantitative Boltzmann–Gibbs Principles via Orthogonal Polynomial Duality</div>
+            <div class="pub-title">Quantitative Boltzmann-Gibbs principles via orthogonal polynomial duality</div>
             <div class="pub-authors">Mario Ayala, Gioia Carinci, and Frank Redig.</div>
-            <div class="pub-venue"><em>Journal of Statistical Physics</em>, 171, 980–999, 2018.</div>
+            <div class="pub-venue"><em>Journal of Statistical Physics</em>, 171(6), 980–999, 2018.</div>
             <div class="pub-links">
               <a href="https://link.springer.com/article/10.1007/s10955-018-2060-7" target="_blank">Journal</a>
               <a href="https://arxiv.org/abs/1712.08492" target="_blank">arXiv</a>
@@ -181,27 +202,27 @@
       <h2 class="mb-4">Other academic work</h2>
       <div class="pub-cards">
 
-        <div class="card mb-3" data-cat="other">
+        <div class="card mb-3" data-cat="other scaling">
           <div class="card-body">
             <div class="pub-title">Fluctuations for interacting particle systems with duality</div>
             <div class="pub-authors">Mario Antonio Ayala Valenzuela.</div>
-            <div class="pub-venue">PhD thesis, Delft University of Technology, 2021.</div>
+            <div class="pub-venue">PhD thesis, Delft University of Technology, 2021. Promotor Frank Redig, copromotor Gioia Carinci.</div>
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="other">
+        <div class="card mb-3" data-cat="other scaling">
           <div class="card-body">
-            <div class="pub-title">Hydrodynamic Limit for the Symmetric Inclusion Process</div>
+            <div class="pub-title">Hydrodynamic limit for the symmetric inclusion process</div>
             <div class="pub-authors">Mario Ayala.</div>
-            <div class="pub-venue">Master's thesis, Delft University of Technology, 2016.</div>
+            <div class="pub-venue">MSc thesis, Delft University of Technology, 2016.</div>
           </div>
         </div>
 
-        <div class="card mb-3" data-cat="other">
+        <div class="card mb-3" data-cat="other populations">
           <div class="card-body">
-            <div class="pub-title">An Epidemiological Approach to the Dynamics of Chytridiomycosis on a Harlequin Frog Population</div>
+            <div class="pub-title">An epidemiological approach to the dynamics of chytridiomycosis on a harlequin frog population</div>
             <div class="pub-authors">Mario Ayala, Casandra Leann Pawling, Adrian Nicholas Smith, Linda Gao, David Hiebeler, and Benjamin Richard Morin.</div>
-            <div class="pub-venue">Technical report, Mathematical and Theoretical Biology Institute, 2006.</div>
+            <div class="pub-venue">Technical report, Mathematical and Theoretical Biology Institute (MTBI), Arizona State University, 2006.</div>
           </div>
         </div>
 
