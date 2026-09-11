@@ -1,0 +1,318 @@
+/* --- Simulations page: interacting particle systems lab --- */
+
+.mario-app section#page-banner.sim-banner {
+  padding-bottom: 1.5rem;
+}
+
+.ips-prose {
+  max-width: 780px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.ips-prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ips-prose h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.ips-prose ul {
+  padding-left: 1.2rem;
+}
+
+.ips-prose li {
+  margin-bottom: 0.4rem;
+}
+
+.ips-prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.ips-try {
+  background: transparent;
+  border: 1px solid #0C1A2E;
+  border-radius: 999px;
+  padding: 0.35rem 1.1rem;
+  font-size: 0.82rem;
+  color: #0C1A2E;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.ips-try:hover {
+  background: #0C1A2E;
+  color: #EFD99A;
+}
+
+/* the lab itself */
+
+.ips-lab {
+  margin: 2rem 0 1rem;
+  padding: 1.25rem;
+  background: #fff;
+  border: 0.5px solid #DDE3ED;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(12, 26, 46, 0.08);
+  scroll-margin-top: 1rem;
+}
+
+.ips-model-bar {
+  justify-content: flex-start;
+}
+
+.ips-rate-line {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #495057;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.ips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem 1.75rem;
+  margin-top: 1.1rem;
+}
+
+.ips-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.82rem;
+  color: #495057;
+}
+
+.ips-field b {
+  color: #0C1A2E;
+  font-weight: 500;
+}
+
+.ips-field input[type=range] {
+  width: 100%;
+  accent-color: #0C1A2E;
+}
+
+.ips-field select {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid #DDE3ED;
+  border-radius: 6px;
+  background: #fff;
+  color: #0C1A2E;
+}
+
+.ips-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.25rem;
+  margin-top: 1.1rem;
+}
+
+.ips-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #495057;
+}
+
+.ips-btn {
+  background: #0C1A2E;
+  border: 1px solid #0C1A2E;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.82rem;
+  color: #F0F4FA;
+  cursor: pointer;
+}
+
+.ips-btn:hover {
+  color: #EFD99A;
+}
+
+.ips-btn.ghost {
+  background: transparent;
+  color: #0C1A2E;
+}
+
+.ips-btn.ghost:hover {
+  background: #0C1A2E;
+  color: #EFD99A;
+}
+
+.ips-seg {
+  display: inline-flex;
+  border: 1px solid #0C1A2E;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.ips-seg button {
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  color: #0C1A2E;
+  cursor: pointer;
+}
+
+.ips-seg button + button {
+  border-left: 1px solid #0C1A2E;
+}
+
+.ips-seg button.active {
+  background: #0C1A2E;
+  color: #EFD99A;
+}
+
+/* status line under the controls */
+
+.ips-status {
+  margin-top: 1.1rem;
+  padding-top: 0.8rem;
+  border-top: 0.5px solid #DDE3ED;
+  font-size: 0.82rem;
+  color: #6c757d;
+}
+
+.ips-status b {
+  color: #0C1A2E;
+  font-weight: 500;
+}
+
+.ips-status .warn {
+  color: #854F0B;
+}
+
+/* one dark card per graph, separated by white gutters */
+
+.ips-panels {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.ips-panel {
+  margin: 0;
+  padding: 0.9rem 1rem 1rem;
+  background: #0C1A2E;
+  border-radius: 8px;
+  color: #F0F4FA;
+  min-width: 0;
+}
+
+.ips-panel.ips-full {
+  grid-column: 1 / -1;
+}
+
+.ips-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.4rem 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.mario-app .ips-panel-title {
+  font-size: 1.05rem;
+  color: #EFD99A;
+  margin: 0 0 0.15rem;
+}
+
+.ips-panel-sub {
+  font-size: 0.8rem;
+  color: #8BA3C0;
+  margin: 0;
+}
+
+.ips-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 1rem;
+  font-size: 0.76rem;
+  color: #8BA3C0;
+}
+
+.ips-legend b {
+  color: #F0F4FA;
+  font-weight: 500;
+}
+
+.ips-legend label {
+  margin: 0;
+  cursor: pointer;
+}
+
+.ips-legend input {
+  accent-color: #EFD99A;
+  vertical-align: -1px;
+  margin-right: 0.35rem;
+}
+
+.sw {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
+.sw-gold { background: #EFD99A; }
+.sw-white { background: #F0F4FA; }
+.sw-dot { background: rgba(143, 179, 220, 0.9); height: 8px; width: 8px; }
+.sw-band { background: rgba(239, 217, 154, 0.25); border: 1px dashed rgba(239, 217, 154, 0.8); height: 10px; }
+.sw-dash { background: repeating-linear-gradient(90deg, rgba(143, 179, 220, 0.8) 0 4px, transparent 4px 7px); }
+
+.ips-panel canvas {
+  display: block;
+  width: 100%;
+}
+
+#ips-particles { height: 300px; }
+#ips-fluct, #ips-hist { height: 170px; }
+#ips-kymo, #ips-order { height: 210px; }
+
+.ips-kymo-wrap {
+  position: relative;
+}
+
+.ips-kymo-wrap span {
+  position: absolute;
+  left: 6px;
+  font-size: 0.72rem;
+  color: #F0F4FA;
+  background: rgba(12, 26, 46, 0.7);
+  padding: 0 4px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+
+#ips-kymo-top { top: 4px; }
+#ips-kymo-bottom { bottom: 4px; }
+
+#ips-rate {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .ips-lab { padding: 0.9rem; }
+  .ips-panels { grid-template-columns: 1fr; gap: 0.9rem; }
+  .ips-panel { padding: 0.8rem 0.8rem 0.9rem; }
+  #ips-particles { height: 240px; }
+}
