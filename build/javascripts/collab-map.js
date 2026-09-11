@@ -62,9 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
       city: 'Colima, Mexico',
       lat: 19.24, lon: -103.72,
       collaborators: [
-        { name: 'Benjamín Vallejo Jiménez', themes: 'Stochastic control, anticipative noise, mathematical finance, consumption-investment' },
-        { name: 'Ricardo Castellanos Curiel', themes: 'Mathematical finance, consumption and portfolios under carbon regimes' },
-        { name: 'Miguel Ángel Tinoco Zermeño', themes: 'Mathematical finance, consumption and portfolios under carbon regimes' }
+        { name: 'Benjamín Vallejo Jiménez', themes: 'Stochastic control, anticipative noise, mathematical finance, consumption-investment' }
       ]
     },
     {
