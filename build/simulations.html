@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="ie=edge" http-equiv="x-ua-compatible" />
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" /><meta name="color-scheme" content="light dark" />
   <title>Mario Ayala · Simulations</title>
   <meta name="description" content="Run the exclusion process, the inclusion process and independent random walkers in your browser, and watch the heat equation, fluctuations and condensation emerge from one generator." />
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
@@ -19,14 +19,14 @@
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-  <link href="/stylesheets/site.css?v=2" rel="stylesheet" />
-  <link href="/stylesheets/ips-lab.css?v=3" rel="stylesheet" />
+  <link href="/stylesheets/site.css?v=3" rel="stylesheet" />
+  <link href="/stylesheets/ips-lab.css?v=4" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
-  <script src="/javascripts/site.js?v=3"></script>
-  <script src="/javascripts/particles.js?v=dev5"></script>
-  <script src="/javascripts/ips-lab.js?v=3"></script>
+  <script src="/javascripts/site.js?v=4"></script>
+  <script src="/javascripts/particles.js?v=dev6"></script>
+  <script src="/javascripts/ips-lab.js?v=4"></script>
 </head>
 <body class="mario-app">
 
@@ -40,7 +40,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/research.html" class="nav-link">Research</a></li>
-          <li class="nav-item active"><a href="/simulations.html" class="nav-link">Simulations</a></li>
+          <li class="nav-item active"><a href="/simulations.html" class="nav-link" aria-current="page">Simulations</a></li>
           <li class="nav-item"><a href="/files/CvMarioAyala.pdf" class="nav-link" target="_blank">CV</a></li>
         </ul>
       </div>
@@ -50,7 +50,7 @@
   <div class="container py-3" id="main">
 
   <section id="page-banner" class="sim-banner">
-    <canvas id="particles"></canvas>
+    <canvas id="particles" aria-hidden="true"></canvas>
     <div class="page-banner-inner container">
       <h1 class="page-banner-title">Simulations</h1>
       <p class="page-banner-sub">Interacting particle systems in your browser</p>
@@ -154,7 +154,7 @@
             <label><input type="checkbox" id="ips-sqrt" />compress tall piles</label>
           </div>
         </div>
-        <canvas id="ips-particles"></canvas>
+        <canvas id="ips-particles" role="img" aria-label="Particle configuration on the ring, with the exact mean"></canvas>
       </figure>
 
       <figure class="ips-panel ips-wide">
@@ -168,7 +168,7 @@
             <span>mean square <b id="ips-var-obs"></b>, prediction <b id="ips-var-pred"></b></span>
           </div>
         </div>
-        <canvas id="ips-fluct"></canvas>
+        <canvas id="ips-fluct" role="img" aria-label="Fluctuations of the configuration around the mean, with the predicted band"></canvas>
       </figure>
 
       <figure class="ips-panel">
@@ -182,7 +182,7 @@
             <span><i class="sw sw-gold"></i>equilibrium on this ring</span>
           </div>
         </div>
-        <canvas id="ips-hist"></canvas>
+        <canvas id="ips-hist" role="img" aria-label="Histogram of the number of particles at one site against the invariant law"></canvas>
       </figure>
 
       <figure class="ips-panel ips-wide">
@@ -193,7 +193,7 @@
           </div>
         </div>
         <div class="ips-kymo-wrap">
-          <canvas id="ips-kymo"></canvas>
+          <canvas id="ips-kymo" role="img" aria-label="Space-time picture of the whole run"></canvas>
           <span id="ips-kymo-top"></span>
           <span id="ips-kymo-bottom"></span>
         </div>
@@ -211,7 +211,7 @@
             <span><i class="sw sw-dash"></i>equilibrium</span>
           </div>
         </div>
-        <canvas id="ips-order"></canvas>
+        <canvas id="ips-order" role="img" aria-label="Share of particles in the largest pile and share of empty sites against time"></canvas>
       </figure>
     </div>
   </section>
@@ -275,7 +275,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-6">
-          <h3>Contact</h3>
+          <h2 class="h3">Contact</h2>
           <address>
             <strong>Technische Universität München</strong><br />
             School of Computation, Information and Technology<br />
@@ -285,11 +285,11 @@
           </address>
         </div>
         <div class="col-12 col-md-6">
-          <h3>Links</h3>
-          <nav class="list-unstyled">
+          <h2 class="h3">Links</h2>
+          <ul class="list-unstyled">
             <li><a href="https://arxiv.org/search/?query=Ayala%2C+Mario&amp;searchtype=author&amp;abstracts=show&amp;order=-submitted_date&amp;size=200" target="_blank">arXiv profile</a></li>
             <li><a href="https://orcid.org/0000-0001-5717-275X" target="_blank">ORCID: 0000-0001-5717-275X</a></li>
-          </nav>
+          </ul>
         </div>
       </div>
     </div>

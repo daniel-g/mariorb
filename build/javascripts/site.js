@@ -42,23 +42,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // The "All" pill has an empty data-filter; pressing the active pill again goes back to it
+  function select(btn) {
+    filterBtns.forEach(function(b) {
+      var on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    applyFilter(btn.dataset.filter || null);
+  }
+
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       var wasActive = btn.classList.contains('active');
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
-      if (wasActive) {
-        applyFilter(null);
-      } else {
-        btn.classList.add('active');
-        applyFilter(btn.dataset.filter);
-      }
+      select(wasActive ? filterBtns[0] : btn);
     });
   });
 
   // research.html#scaling (or #effective, #populations, #other) opens with that filter on
   var initial = location.hash.slice(1);
+  var start = filterBtns[0];
   filterBtns.forEach(function(btn) {
-    if (btn.dataset.filter === initial) btn.click();
+    if (initial && btn.dataset.filter === initial) start = btn;
   });
+  select(start);
 
 });

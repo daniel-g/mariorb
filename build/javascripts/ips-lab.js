@@ -353,7 +353,9 @@
     var $ = function (id) { return document.getElementById(id); };
 
     var S = Object.assign({}, SPEEDS, PRESETS.condensation);
-    S.playing = true;
+    // with Reduce Motion on, the lab opens paused and runs only once Play or an experiment is pressed
+    var still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    S.playing = !still;
 
     var eng, heat, mean, localAvg, law, histEMA, kymoTimes, history, marks, capped, jumpAcc;
     var views = {};
@@ -390,8 +392,16 @@
     function maxN() { return S.sigma < 0 ? Math.min(N_MAX, S.alpha * S.L) : N_MAX; }
 
     function syncControls() {
-      modelBtns.forEach(function (b) { b.classList.toggle('active', Number(b.dataset.sigma) === S.sigma); });
-      clockBtns.forEach(function (b) { b.classList.toggle('active', b.dataset.clock === S.clock); });
+      modelBtns.forEach(function (b) {
+        var on = Number(b.dataset.sigma) === S.sigma;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      clockBtns.forEach(function (b) {
+        var on = b.dataset.clock === S.clock;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
       alphaIn.step = S.sigma < 0 ? String(1000 / 7) : '1';
       alphaIn.value = alphaToSlider(S.alpha);
       nIn.value = nToSlider(S.N);
@@ -907,7 +917,7 @@
     document.querySelectorAll('[data-preset]').forEach(function (b) {
       b.addEventListener('click', function () {
         loadPreset(b.dataset.preset);
-        if (b.dataset.scroll !== undefined) root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (b.dataset.scroll !== undefined) root.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'start' });
       });
     });
 

@@ -39,7 +39,7 @@
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #6c757d;
+  color: #495057;
   margin-left: 0.6rem;
 }
 
@@ -56,12 +56,6 @@
   padding: 0.7rem 0.8rem 0.75rem;
   display: flex;
   flex-direction: column;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.rmap-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(12, 26, 46, 0.1);
 }
 
 .rmap-box.l1 { border-color: #185FA5; }
@@ -107,7 +101,7 @@
 
 .rmap .tag {
   flex: none;
-  font-size: 0.66rem;
+  font-size: 0.7rem;
   line-height: 1.5;
   padding: 0 0.35rem;
   border-radius: 3px;
@@ -124,7 +118,7 @@
 }
 
 .rmap .tag.prep {
-  color: #8a94a3;
+  color: #5f6875;
 }
 
 .rmap-open {
@@ -268,6 +262,11 @@
   .rmap-row2 { margin-top: 0.75rem; }
 }
 
+/* phones: more room between the paper links, so that each one can be tapped */
+@media (max-width: 767.98px) {
+  .rmap-box li { padding: 0.45rem 0; }
+}
+
 /* links inside running text on the home page */
 .mario-app .text-link {
   color: #185FA5;
@@ -277,4 +276,41 @@
 
 .mario-app .text-link:hover {
   border-bottom-color: #185FA5;
+}
+
+/* --- Dark appearance --- */
+@media (prefers-color-scheme: dark) {
+  .rmap { color: #E6ECF5; }
+
+  .rmap-core {
+    background: rgba(127, 178, 229, 0.07);
+    border-color: rgba(127, 178, 229, 0.35);
+  }
+
+  .rmap-label { color: #7FB2E5; }
+  .rmap-note { color: #A9B8CC; }
+
+  .rmap-box { background: #0F1D33; }
+  .rmap-box.l1 { border-color: #7FB2E5; }
+  .rmap-box.l2 { border-color: #5CC4A6; }
+  .rmap-box.l3 { border-color: #E0A458; }
+  .l1 .rmap-head { color: #7FB2E5; }
+  .l2 .rmap-head { color: #5CC4A6; }
+  .l3 .rmap-head { color: #E0A458; }
+
+  .rmap-box li a { border-bottom-color: rgba(230, 236, 245, 0.4); }
+  .rmap-box li a:hover { color: #7FB2E5; border-bottom-color: #7FB2E5; }
+
+  .rmap .tag.pub { background: #E6ECF5; color: #0C1A2E; }
+  .rmap .tag.sub { border-color: rgba(230, 236, 245, 0.55); }
+  .rmap .tag.prep { color: #A9B8CC; }
+
+  .rmap-open { border-top-color: #24364F; color: #A9B8CC; }
+  .rmap-toolbox { border: 1px solid #24364F; }
+  .rmap-drop, .rmap-bridge, .rmap-legend { color: #8FA1B8; }
+
+  .mario-app section#research .card-subtitle { color: #E6ECF5; }
+
+  .mario-app .text-link { color: #8FB3DC; border-bottom-color: rgba(143, 179, 220, 0.4); }
+  .mario-app .text-link:hover { border-bottom-color: #8FB3DC; }
 }

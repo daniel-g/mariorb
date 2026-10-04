@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var FADE_PX = 90; // transition zone above wherever the particles must clear out
 
+  // With Reduce Motion on, the page shows one sample of the initial product measure and no dynamics
+  var still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
   var dpr, cols, rows, cellPx, occ, particles, t, timeToNext, fadeStart, fadeEnd;
 
   function idx(gx, gy) { return gy * cols + gx; }
@@ -91,7 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
     seed();
   }
   resize();
-  window.addEventListener('resize', resize);
+  window.addEventListener('resize', function () {
+    resize();
+    if (still) requestAnimationFrame(frame);
+  });
 
   function easeInOut(x) {
     return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
@@ -143,14 +149,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function frame(now) {
     var dt = Math.min((now - last) / 1000, 0.05);
     last = now;
-    t += dt;
 
-    timeToNext -= dt;
-    var guard = 0;
-    while (timeToNext <= 0 && guard < 1000) {
-      doEvent();
-      timeToNext += sampleWait();
-      guard++;
+    if (!still) {
+      t += dt;
+      timeToNext -= dt;
+      var guard = 0;
+      while (timeToNext <= 0 && guard < 1000) {
+        doEvent();
+        timeToNext += sampleWait();
+        guard++;
+      }
     }
 
     for (var i = 0; i < particles.length; i++) updateVisual(particles[i]);
@@ -199,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
 
-    requestAnimationFrame(frame);
+    if (!still) requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
 });
