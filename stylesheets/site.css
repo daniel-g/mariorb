@@ -7203,11 +7203,7 @@ a.text-dark:hover, a.text-dark:focus {
   .mario-app .card {
     border-radius: 10px;
     border: 0.5px solid #DDE3ED;
-    box-shadow: 0 2px 12px rgba(12, 26, 46, 0.08);
-    transition: transform 0.18s ease, box-shadow 0.18s ease; }
-  .mario-app .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(12, 26, 46, 0.14); }
+    box-shadow: 0 2px 12px rgba(12, 26, 46, 0.08); }
   .mario-app section#research .row > div:nth-child(1) .card {
     border-top: 3px solid #185FA5; }
   .mario-app section#research .row > div:nth-child(2) .card {
@@ -7269,6 +7265,7 @@ section#page-banner {
   font-family: 'Lora', serif;
   font-weight: 500;
   font-size: 1rem;
+  line-height: 1.5;
   color: #0C1A2E;
   margin-bottom: 0.2rem; }
 
@@ -7297,14 +7294,19 @@ section#page-banner {
 .pub-links a:hover {
   text-decoration: underline; }
 
-.pub-cards > .card:nth-child(3n+1) {
-  border-top: 3px solid #185FA5; }
+/* the top border is the colour of the research line, as on the home page;
+   the last matching rule wins, so a thesis tagged "other scaling" is blue */
+.pub-cards > .card {
+  border-top: 3px solid #8BA3C0; }
 
-.pub-cards > .card:nth-child(3n+2) {
-  border-top: 3px solid #0F6E56; }
+.pub-cards > .card[data-cat~="populations"] {
+  border-top-color: #854F0B; }
 
-.pub-cards > .card:nth-child(3n) {
-  border-top: 3px solid #854F0B; }
+.pub-cards > .card[data-cat~="effective"] {
+  border-top-color: #0F6E56; }
+
+.pub-cards > .card[data-cat~="scaling"] {
+  border-top-color: #185FA5; }
 
 .mario-app section#collaborators {
   background-color: #0C1A2E;
@@ -7392,6 +7394,9 @@ section#page-banner {
   cursor: pointer;
   transition: color 0.15s, box-shadow 0.15s;
   letter-spacing: 0.03em;
+}
+
+.pub-filter-btn:focus:not(:focus-visible) {
   outline: none;
 }
 
@@ -7399,9 +7404,12 @@ section#page-banner {
   color: #F0F4FA;
 }
 
+/* the selected pill is marked by a gold ring and a heavier weight, not by colour alone */
 .pub-filter-btn.active {
   color: #EFD99A;
-  box-shadow: 0 2px 10px rgba(12,26,46,0.28);
+  font-weight: 500;
+  border-color: #EFD99A;
+  box-shadow: 0 0 0 2px #0C1A2E, 0 2px 10px rgba(12,26,46,0.28);
 }
 
 .pub-hidden {
@@ -7418,5 +7426,199 @@ section#page-banner {
   .mario-app .navbar {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+/* --- Keyboard focus: a visible ring, blue on light surfaces and gold on navy ones --- */
+.mario-app :focus-visible {
+  outline: 2px solid #185FA5;
+  outline-offset: 2px;
+}
+
+.mario-app .navbar :focus-visible,
+.mario-app section#hero :focus-visible,
+.mario-app section#page-banner :focus-visible,
+.mario-app .ips-panel :focus-visible,
+.mario-app .rmap-toolbox :focus-visible {
+  outline-color: #EFD99A;
+}
+
+/* --- Links in the bio and the footer look like links --- */
+.mario-app #bio .email-link,
+.mario-app #footer a {
+  color: #185FA5;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(24, 95, 165, 0.35);
+}
+
+.mario-app #bio .email-link:hover,
+.mario-app #footer a:hover {
+  border-bottom-color: #185FA5;
+}
+
+.mario-app #footer li {
+  margin-bottom: 0.35rem;
+}
+
+/* --- Home page: the research-line cards keep a readable line length --- */
+.mario-app section#research > .row {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Research page: the collaborator map as a plain list --- */
+.collab-list {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.collab-list summary {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #495057;
+  cursor: pointer;
+}
+
+.collab-list ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem 1.75rem;
+  list-style: none;
+  margin: 0.5rem 0 0.75rem;
+  padding: 0;
+}
+
+.collab-list strong {
+  display: block;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.collab-list .tt-city {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #495057;
+}
+
+.collab-list .tt-collab {
+  margin-top: 0.35rem;
+}
+
+.collab-list .tt-name {
+  font-weight: 500;
+}
+
+.collab-list .tt-themes {
+  color: #495057;
+}
+
+/* --- Phones: the paper links are large enough to tap --- */
+@media (max-width: 767.98px) {
+  .pub-links {
+    margin-top: 0;
+  }
+  .pub-links a {
+    display: inline-block;
+    padding: 0.6rem 0;
+    margin-right: 1.5rem;
+  }
+}
+
+/* --- Dark appearance, following the system setting --- */
+@media (prefers-color-scheme: dark) {
+  body.mario-app {
+    background-color: #08111F;
+    color: #E6ECF5;
+  }
+
+  a {
+    color: #E6ECF5;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  .mario-app .text-muted {
+    color: #8FA1B8 !important;
+  }
+
+  .mario-app .bg-light {
+    background-color: #0C1A2E !important;
+  }
+
+  .mario-app section#bio {
+    border-bottom-color: #24364F;
+  }
+
+  .mario-app .card {
+    background-color: #0F1D33;
+    border-color: #24364F;
+    box-shadow: none;
+  }
+
+  .mario-app .card-title,
+  .pub-title {
+    color: #E6ECF5;
+  }
+
+  .pub-authors {
+    color: #A9B8CC;
+  }
+
+  .pub-venue {
+    color: #8FA1B8;
+  }
+
+  .pub-links a {
+    color: #8FB3DC;
+  }
+
+  .pub-cards > .card { border-top-color: #5C7391; }
+  .pub-cards > .card[data-cat~="populations"] { border-top-color: #E0A458; }
+  .pub-cards > .card[data-cat~="effective"] { border-top-color: #5CC4A6; }
+  .pub-cards > .card[data-cat~="scaling"] { border-top-color: #7FB2E5; }
+
+  .mario-app section#research .row > div:nth-child(1) .card { border-top-color: #7FB2E5; }
+  .mario-app section#research .row > div:nth-child(2) .card { border-top-color: #5CC4A6; }
+  .mario-app section#research .row > div:nth-child(3) .card { border-top-color: #E0A458; }
+
+  .pub-filter-btn {
+    background: #0F1D33;
+    border-color: #2E4566;
+  }
+
+  .pub-filter-btn.active {
+    border-color: #EFD99A;
+    box-shadow: 0 0 0 2px #08111F;
+  }
+
+  .mario-app :focus-visible {
+    outline-color: #EFD99A;
+  }
+
+  .mario-app #bio .email-link,
+  .mario-app #footer a {
+    color: #8FB3DC;
+    border-bottom-color: rgba(143, 179, 220, 0.4);
+  }
+
+  .mario-app #bio .email-link:hover,
+  .mario-app #footer a:hover {
+    border-bottom-color: #8FB3DC;
+  }
+
+  .collab-list summary,
+  .collab-list .tt-city,
+  .collab-list .tt-themes {
+    color: #A9B8CC;
   }
 }

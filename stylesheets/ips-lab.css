@@ -346,3 +346,30 @@
     margin: 0 auto 1.4rem;
   }
 }
+
+/* --- Dark appearance --- */
+@media (prefers-color-scheme: dark) {
+  .ips-try { border-color: #5C7391; color: #E6ECF5; }
+  .ips-try:hover { background: #EFD99A; border-color: #EFD99A; color: #0C1A2E; }
+
+  .ips-lab { background: #0F1D33; border-color: #24364F; box-shadow: none; }
+
+  .ips-rate-line, .ips-field, .ips-group { color: #A9B8CC; }
+  .ips-field b, .ips-status b { color: #E6ECF5; }
+  .ips-field input[type=range] { accent-color: #EFD99A; }
+  .ips-field select { background: #0C1A2E; border-color: #5C7391; color: #E6ECF5; }
+
+  .ips-btn { background: #1B3050; border-color: #5C7391; }
+  .ips-btn.ghost { color: #E6ECF5; }
+  .ips-btn.ghost:hover { background: #EFD99A; border-color: #EFD99A; color: #0C1A2E; }
+
+  .ips-seg { border-color: #5C7391; }
+  .ips-seg button { color: #E6ECF5; }
+  .ips-seg button + button { border-left-color: #5C7391; }
+  .ips-seg button.active { background: #EFD99A; color: #0C1A2E; }
+
+  .ips-status { border-top-color: #24364F; color: #8FA1B8; }
+  .ips-status .warn { color: #E0A458; }
+
+  .ips-photo figcaption { color: #8FA1B8; }
+}

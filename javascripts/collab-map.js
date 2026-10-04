@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!canvas) return;
   var ctx = canvas.getContext('2d');
   var tooltip = document.getElementById('collab-tooltip');
+  var still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   var institutions = [
     {
@@ -212,7 +213,8 @@ document.addEventListener('DOMContentLoaded', function () {
       drawArc(homePt, instPts[i], i === hovered ? 1 : 0.6);
     });
 
-    pulses.forEach(function (p) {
+    // the travelling dots are decoration: with Reduce Motion on they are not drawn
+    if (!still) pulses.forEach(function (p) {
       p.t = (p.t + 0.0025) % 1;
       var pt = quadPt(homePt, instPts[p.idx], p.t);
       ctx.beginPath();
@@ -280,6 +282,35 @@ document.addEventListener('DOMContentLoaded', function () {
   function hide() {
     hovered = -1;
     tooltip.style.display = 'none';
+  }
+
+  // The same information as a plain list under the map, for keyboards and screen readers
+  var list = document.getElementById('collab-list');
+  if (list) {
+    institutions.forEach(function (inst) {
+      var li = document.createElement('li');
+      var head = document.createElement('strong');
+      head.textContent = inst.name;
+      li.appendChild(head);
+      var city = document.createElement('span');
+      city.className = 'tt-city';
+      city.textContent = inst.city;
+      li.appendChild(city);
+      inst.collaborators.forEach(function (c) {
+        var row = document.createElement('div');
+        row.className = 'tt-collab';
+        var name = document.createElement('span');
+        name.className = 'tt-name';
+        name.textContent = c.name;
+        var themes = document.createElement('div');
+        themes.className = 'tt-themes';
+        themes.textContent = c.themes;
+        row.appendChild(name);
+        row.appendChild(themes);
+        li.appendChild(row);
+      });
+      list.appendChild(li);
+    });
   }
 
   canvas.addEventListener('mousemove', function (e) { showAt(e.clientX, e.clientY, 14); });
