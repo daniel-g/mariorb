@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
       isHome: true,
       collaborators: [
         { name: 'Johannes Zimmer', themes: 'Interacting particle systems, hydrodynamic limits, non-equilibrium fluctuations, multiplicative noise, coarse-graining' },
-        { name: 'D. R. Michiel Renger', themes: 'Exclusion process, hydrodynamic limits, collisions, fluxes, large deviations' }
+        { name: 'D. R. Michiel Renger', themes: 'Exclusion process, hydrodynamic limits, collisions, fluxes, large deviations' },
+        { name: 'Zhengyan Wu', themes: 'SPDEs, Dean-Kawasaki equations, Lévy noise, martingale problems', url: 'https://sites.google.com/view/zhengyanwu' }
       ]
     },
     {
@@ -299,9 +300,10 @@ document.addEventListener('DOMContentLoaded', function () {
       inst.collaborators.forEach(function (c) {
         var row = document.createElement('div');
         row.className = 'tt-collab';
-        var name = document.createElement('span');
+        var name = document.createElement(c.url ? 'a' : 'span');
         name.className = 'tt-name';
         name.textContent = c.name;
+        if (c.url) name.href = c.url;
         var themes = document.createElement('div');
         themes.className = 'tt-themes';
         themes.textContent = c.themes;
